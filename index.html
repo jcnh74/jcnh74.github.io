@@ -1,467 +1,145 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css"/>
-		<style>
-
-			html, body {
-				padding:0;
-				margin:0;
-			}
-
-			h2 {
-			  font-size: 18px;
-			  line-height: 22px;
-			  font-weight: 200;
-			  margin: 0;
-			}
-			.glyph {
-			  display: block;
-			  height: 60px;
-			  width: 200px;
-			  margin: 40px auto;
-			}
-
-			  section.slider {
-			  	width:100%;
-			  	height:auto;
-			  	min-height:100%;
-			  	min-width: 320px;
-			  	background-color:#070433;
-			  }
-			  section.slider > div{
-			  	width:100%;
-			  	height:auto;
-			  	min-height:100%;
-			  	position: absolute;
-			  	background-position: center center;
-			  	background-size: cover;
-
-			  }
-
-			  section.nav{
-			  	position:absolute;
-			  	top:0;
-			  	left:20px;
-			  	right:20px;
-			  	padding:10px;
-			  	border-bottom:1px solid rgba(255,255,255,0.3);
-			  }
-			  section.nav img{
-			  	width:150px;
-			  }
-			section.section {
-			  overflow: hidden;
-			  position: relative;
-			  padding: 60px 0;
-			  width: 100%;
-			  height: 700px;
-			  background-color: #1100cf;
-			}
-			section.section:nth-child(2n+1) {
-			  background-color: #ffffff;
-			}
-			section.section:nth-child(2n+1) .copy {
-			  position: static;
-			  width: 100%;
-			  padding: 0 20px 20px 20px;
-			}
-			section.section:nth-child(2n+1) .copy h2,
-			section.section:nth-child(2n+1) .copy p {
-			  color: #1100cf !important;
-			}
-			section.section.sec1 {
-				height:1000px;
-			  padding: 20px 0 60px 0;
-			}
-			section.section.sec1 .copy {
-			  position: static;
-			  width: 100%;
-			  padding: 0;
-			}
-			section.section.sec1 .copy h2 {
-			  text-align: center;
-			}
-			section.section.sec1 .device-wrap .device-video {
-			  display: block;
-			}
-			section.section.sec1 .device-wrap .device-image {
-			  display: block;
-			}
-			section.section.sec1 .device-wrap .desktop-image {
-			  display: none;
-			}
-			section.section.sec1 .device-wrap .desktop-image img {
-			  width: 100%;
-			  max-width: 1024px;
-			}
-			section.section .copy {
-			  box-sizing: border-box;
-			  position: static;
-			  padding: 0 20px 20px 20px;
-			}
-			section.section .copy p,
-			section.section .copy h2 {
-			  font-weight: 100;
-			  color: #ffffff !important;
-			}
-			section.section .copy p {
-			  font-size: 16px;
-			  line-height: 22px;
-			  padding: 10px 30px;
-			}
-			section.section .copy h2 {
-			  font-size: 20px;
-			  line-height: 28px;
-			  padding: 0 30px;
-			  margin: 0;
-			}
-			.device {
-			  position: relative;
-			  margin: 0 auto;
-			  text-align: center;
-			}
-			.device .device-wrap {
-			  position: relative;
-			  height: 700px;
-			}
-			.device .device-wrap .device-video {
-			  position: absolute;
-			  padding: 0;
-			  top: 106px;
-			  right: 0;
-			  left: 0;
-			  width: auto;
-			}
-			.device .device-wrap .device-video img {
-			  width: 266px;
-			  margin: 0 auto;
-			  height: auto;
-			}
-			.device .device-wrap .device-image {
-			  width: auto;
-			}
-			.device .device-wrap .device-image img {
-			  margin: 0 auto;
-			  height: 700px;
-			}
-
-
-/* ANIMATION */
-
-@-webkit-keyframes cycle {
-   0%  { -webkit-filter: saturate(1.0) blur(0px); opacity:1; } /* When you start the slide, the first image is already visible */
-   4%  { -webkit-filter: saturate(1.0) blur(0px); opacity:1; } /* Original Position */
-   16% { -webkit-filter: saturate(1.0) blur(0px); opacity:1; z-index:0; } /* From 4% to 16 % = for 3 seconds the image is visible */
-   20% { opacity:0; z-index:0; } /* From 16% to 20% = for 1 second exit image */
-   21% { opacity:0; z-index:-1;  } /* Return to Original Position */
-   92% { opacity:0; z-index:0; }
-   96% { -webkit-filter: saturate(1.0) blur(0px); opacity:0; } /* From 96% to 100% = for 1 second enter image*/
-   100%{ -webkit-filter: saturate(1.0) blur(0px); opacity:1; }
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/less">
+body{
+	margin:0;
+	padding:0;
+	font-family:Avenir, Helvetica, san-serif;
 }
-
-@-webkit-keyframes cycletwo {
-   0%  { opacity:0;  } /* Original Position */
-   16% { -webkit-filter: saturate(0.0) blur(10px); opacity:0;  }/* Starts moving after 16% to this position */
-   20% { -webkit-filter: saturate(1.0) blur(0px); opacity:1;  }
-   24% { opacity:1; }  /* From 20% to 24% = for 1 second enter image*/
-   36% { -webkit-filter: saturate(1.0) blur(0px); opacity:1; z-index: 0; }   /* From 24% to 36 % = for 3 seconds the image is visible */
-   40% { -webkit-filter: saturate(0.0) blur(10px); opacity:0; z-index: 0; } /* From 36% to 40% = for 1 second exit image */
-   41% { opacity:0; z-index: -1; }   /* Return to Original Position */
-   100%{ opacity:0; z-index: -1; }
+::-webkit-scrollbar{
+	display:none;
 }
-
-@-webkit-keyframes cyclethree {
-   0%  { opacity:0;  }
-   36% { -webkit-filter: saturate(0.0) blur(10px); opacity:0;  }
-   40% { -webkit-filter: saturate(1.0) blur(0px); opacity:1;  }
-   44% { opacity:1;  }
-   56% { -webkit-filter: saturate(1.0) blur(0px); opacity:1;  }
-   60% { -webkit-filter: saturate(0.0) blur(10px); opacity:0; z-index: 0; }
-   61% { opacity: 0; z-index: -1; }
-   100%{ opacity: 0; z-index: -1; }
+.input{
+	width:100%;
+	border:0;
+	font-family:Avenir, Helvetica, san-serif;
+	font-size: 16px;
+	line-height: 150%;
+	min-height: 32px;
+	padding:8px 12px;
+	outline: none;
+	background-color: transparent;
+	color:rgb(48,48,48);
+	transition:all 0.2s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	white-space: nowrap;
 }
-
-@-webkit-keyframes cyclefour {
-   0%  { opacity: 0; }
-   56% { -webkit-filter: saturate(0.0) blur(10px); opacity: 0; }
-   60% { -webkit-filter: saturate(1.0) blur(0px); opacity: 1; }
-   64% { opacity: 1; }
-   76% { -webkit-filter: saturate(1.0) blur(0px); opacity: 1; z-index: 0; }
-   80% { -webkit-filter: saturate(0.0) blur(10px); opacity: 0; z-index: 0; }
-   81% { opacity: 0; z-index: -1; }
-   100%{ opacity: 0; z-index: -1; }
+label{
+	position:absolute;
+	top:16px;
+	font-size:16px;
+	left:12px;
+	z-index:-1;
+	color:rgb(169,169,169);
+	transition:all 0.2s cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
-@-webkit-keyframes cyclefive {
-   0%  { opacity: 0; }
-   76% { -webkit-filter: saturate(0.0) blur(10px); opacity: 0; }
-   80% { -webkit-filter: saturate(1.0) blur(0px); opacity: 1; }
-   84% { opacity: 1; }
-   96% { -webkit-filter: saturate(1.0) blur(0px); opacity: 1; z-index: 0; }
-   100%{ -webkit-filter: saturate(0.0) blur(10px); opacity: 0; z-index: 0; }
+header{
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	font-size: 12px;
+	padding:16px 12px 6px 12px;
+	text-transform: uppercase;
+	color:rgb(48,48,48);
+	background-color:rgb(242,242,242);
 }
-
-section.slider > div.firstanimation {
-   -webkit-animation: cycle 42s linear infinite;
+.item{
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	position:relative;
+	min-height:48px;
+	.ccbcc{
+		position:absolute;
+		top:16px;
+		right:16px;
+	}
+	&#message{
+		height:auto;
+		.input{
+			min-height: 92px;
+			white-space: normal;
+		}
+	}
+	overflow:hidden;
+	.input.typing,
+	.input:focus{
+		padding-top:24px;
+		+ label{
+			top:4px;
+			font-size: 12px;
+		}
+	}
+	.input:focus{
+		+ label{
+			color:rgb(17,0,207);
+		}
+	}
 }
-
-section.slider > div.secondanimation {
-   -webkit-animation: cycletwo 42s linear infinite;
+.scroll{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 40px;
+    padding:9px;
+    white-space:nowrap;
+	.account{
+		display:inline-block;
+		margin:4px;
+		width:32px;
+		height:32px;
+		border-radius: 5px;
+		background-color: rgb(48,48,48);
+	}
 }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.4.0/less.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.18/jquery.autosize.min.js" type="text/javascript"></script>
+</head>
+<body>
+<header class="head">
+	Choose From Account
+</header>
+<section id="fromSelector" class="scroll">
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+	<div class="account"></div>
+</section>
+<section id="from" class="item">
+	<div contenteditable="true" spellcheck="false" class="input"></div>
+	<label>From</label>
+</section>
+<section id="to" class="item">
+	<div contenteditable="true" spellcheck="false" class="input"></div>
+	<label>To</label>
+	<div class="ccbcc">cc/bcc</div>
+</section>
+<section id="subject" class="item">
+	<div contenteditable="true" spellcheck="false" class="input"></div>
+	<label>Subject</label>
+</section>
+<section id="message" class="item">
+	<div contenteditable="true" spellcheck="false" id="messageInput" class="input"></div>
+	<label>Message</label>
+</section>
 
-section.slider > div.thirdanimation {
-   -webkit-animation: cyclethree 42s linear infinite;
-}
+<script>
+$(function() {
+	//$('#messageInput').autosize();
+    $('.input').keyup(function() {
+        var val = $(this).text();
+        console.log(val);
+        if(val.length > 0){
+        	$(this).addClass('typing');
+        }else{
+        	$(this).removeClass('typing');
+        }
+    });
+});
 
-section.slider > div.fourthanimation {
-   -webkit-animation: cyclefour 42s linear infinite;
-}
-
-section.slider > div.fifthanimation {
-   -webkit-animation: cyclefive 42s linear infinite;
-}
-
-			@media (min-width: 1024px) {
-			  h2 {
-			    padding-top: 100px;
-			    font-size: 52px;
-			    line-height: 58px;
-			  }
-
-	
-
-
-
-
-
-			  section.section {
-			    padding: 80px 0;
-			  }
-			  section.section:nth-child(2n+1) .copy {
-			    position: absolute;
-			    top: 0;
-			    left: 0;
-			    width: 50%;
-			    padding: 170px 200px 60px 60px;
-			  }
-			  section.section.sec1 {
-			    padding: 0 0 60px 0;
-			  }
-			  section.section.sec1 .copy {
-			    position: static;
-			    width: 100%;
-			    padding: 100px 80px 20px 80px;
-			  }
-			  section.section.sec1 .copy h2 {
-			    text-align: center;
-			  }
-			  section.section.sec1 .device-wrap {
-			    position: relative;
-			    height: 700px;
-			  }
-			  section.section.sec1 .device-wrap .device-video,
-			  section.section.sec1 .device-wrap .device-image {
-			    display: none;
-			  }
-			  section.section.sec1 .device-wrap .desktop-image {
-			    display: block;
-			  }
-			  section.section .copy {
-			    box-sizing: border-box;
-			    position: absolute;
-			    top: 0;
-			    left: 50%;
-			    width: 50%;
-			    padding: 170px 60px 60px 200px;
-			  }
-			  section.section .copy p,
-			  section.section .copy h2 {
-			    font-weight: 100;
-			  }
-			  section.section .copy p {
-			    font-size: 16px;
-			    line-height: 24px;
-			    padding: 10px 80px;
-			  }
-			  section.section .copy h2 {
-			    font-size: 38px;
-			    line-height: 46px;
-			    padding: 10px 80px;
-			  }
-			}
-		</style>
-		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	</head>
-	<body>
-		<section class="slider" style="height:800px;">
-			<div class="firstanimation" style="background-image:url(img/bike.jpg);"></div>
-			<div class="secondanimation" style="background-image:url(img/board.jpg);"></div>
-			<div class="thirdanimation" style="background-image:url(img/climb.jpg);"></div>
-			<div class="fourthanimation" style="background-image:url(img/surf.jpg);"></div>
-			<div class="fifthanimation" style="background-image:url(img/climb.jpg);"></div>
-		</section>
-		<section class="nav">
-			<a href="ekkoapp://"><img src="img/ekko.svg" /></a>
-		</section>
-		<div class="Marketing">
-      <section class="section sec1">
-        <div class="copy">
-          <h2 class="Splash-title">All of your communications and contacts in one place – available privately and securely across all your devices – filtered and organized the way you want to see them.</h2>
-          <a href="https://itunes.apple.com/us/app/ekko/id786671830?mt=8&uo=4" target="itunes_store" taget="_blank">
-            <Glyph glyph="appstore"/>
-          </a>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-login.jpg" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-            <div class="desktop-image">
-              <img src="img/ekko_applications.jpg" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="copy">
-          <h2 class="Splash-title">Channel Navigation</h2>
-          <p>Channels are a core feature of the Ekko user experience. Channels allow you to filter and organize message streams regardless of message type. Channels are navigated by swiping left and right to change channels and scrolling up and down to view individual messages and select one or more messages to expand.</p>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-channels.gif" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-       <section class="section">
-        <div class="copy">
-          <h2 class="Splash-title">Channel Tuner</h2>
-          <p>Channels are created and managed using the Channel Tuner. Channels can be based on accounts, contacts and labels and arranged in any order. There are also default channels such as All Messages, All Posts, Trash, Sent, Archived and Drafts. Channels can be visible or hidden for custom views on the fly.</p>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-create-channel.gif" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="copy">
-          <h2 class="Splash-title">Touch &amp; Hold Menu</h2>
-          <p>Within an Ekko channel, there is no need to expand a message to reply, archive, delete, or label it. Simply touch and hold over any message in any channel and then roll over the appropriate icon to quickly manage your inbox and responses. Ekko’s touch and hold menu also lets you make any message a ToDo by creating custom tasks and setting reminders and due dates.</p>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-touch-and-hold.gif" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="copy">
-          <h2 class="Splash-title">Message Composer</h2>
-          <p>The Ekko message composer is one of Ekko’s most powerful features. It lets you send a single message as any combination of email, chat, SMS, Facebook and Twitter all at the same time. Your options are defined by the accounts you link to Ekko. In addition you can send any type of attachments including links, photos, images, videos, documents, files, audio and drawings.</p>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-composer.gif" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-
-      <section class="section">
-        <div class="copy">
-          <h2 class="Splash-title">ToDos</h2>
-          <p>The ToDo section of the folder icon reveals rich ways to star, create custom tasks, reminders and due dates for a task. There is also a dedicated ToDo section of the app that enables you to view and manage tasks in one place.</p>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-todos.gif" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="section">
-        <div class="copy">
-          <h2 class="Splash-title">Privacy + Security</h2>
-          <p>Your privacy and security are top priorities at Ekko. Ekko does not scan your messages, profile you, use cookies or invade your privacy in any way. Your messages are secure, backed-up and available across all your devices under password protection and industry-standard encryption technologies. The Ekko message composer also allows you to apply message-specific self-destruction, password-protection, enhanced encryption and redaction.</p>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-security.gif" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="copy">
-          <h2 class="Splash-title">Linking Accounts</h2>
-          <p>There is an extensive and growing list of accounts types and contacts you can link to Ekko, including Gmail, Facebook, Twitter, Yahoo, iCloud, Outlook and AOL, as well as IMAP and POP email accounts. Ekko can also provide you with a secure Ekko email address as well as an Ekko phone number that supports text messaging and visual voicemail all within your Ekko channels.</p>
-        </div>
-        <div class="device">
-          <div class="device-wrap">
-            <div class="device-video">
-              <img src="img/screen-manage-accounts.gif" />
-            </div>
-            <div class="device-image">
-              <img src="img/iphone5-white.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
-    <script>
-    (function() {
-    	function resize(){
-    		ht = $(window).height();
-    		$('section.slider').height(ht);
-    		$('section.slider > div').height(ht);
-    	}
-    	$(window).resize(function(){
-    		resize();
-    	});
-    	$(window).load(function(){
-    		resize();
-    	});
-    })();
-    </script>
-	</body>
+</script>
+</body>
 </html>
