@@ -18,7 +18,7 @@ body{
 	-webkit-tap-highlight-color: transparent;
 	font-size: 18px;
 	line-height: 150%;
-	min-height: 32px;
+	min-height: 48px;
 	padding:10px 12px;
 	outline: none;
 	background-color: transparent;
@@ -50,6 +50,7 @@ header{
 	position:relative;
 	background-color: #FFF;
 	overflow:hidden;
+	transition:all 0.2s ease-in-out;
 	.ccbcc{
 		position:absolute;
 		top:8px;
@@ -62,13 +63,21 @@ header{
 			background-color: transparent;
 			color:rgb(169,169,169);
 			outline: none;
+			width:auto;
+			padding-left:0;
+			padding-right:0;
+			-webkit-tap-highlight-color: transparent;
 		}
 	}
 	&#bcc,
 	&#cc{
-		height:0;
 		border:0;
-		opacity:0;
+		.input{
+			min-height: 0;
+			height: 0;
+			padding:0 12px;
+			margin:0;
+		}
 	}
 	&#message{
 		height:auto;
@@ -103,7 +112,19 @@ header{
 		&#cc{
 			height:auto;
 			border-bottom:1px solid rgba(0,0,0,0.1);
-			opacity:1;
+			min-height: 48px;
+			.input{
+				height: auto;
+				padding:10px 12px;
+			}
+			.input.typing,
+			.input:focus{
+				padding-top:24px;
+				+ label{
+					top:4px;
+					font-size: 14px;
+				}
+			}
 		}
 	}
 }
@@ -117,7 +138,19 @@ header{
 		&#bcc{
 			height:auto;
 			border-bottom:1px solid rgba(0,0,0,0.1);
-			opacity:1;
+			.input{
+				height: auto;
+				min-height: 48px;
+				padding:10px 12px;
+			}
+			.input.typing,
+			.input:focus{
+				padding-top:24px;
+				+ label{
+					top:4px;
+					font-size: 14px;
+				}
+			}
 		}
 	}
 }
