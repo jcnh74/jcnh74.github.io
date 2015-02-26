@@ -88,12 +88,19 @@ header{
 			margin-right:8px;
 		}
 	}
-	.input.typing,
+	&.typing .input,
 	.input:focus{
 		padding-top:24px;
 		+ label{
 			top:4px;
 			font-size: 14px;
+		}
+	}
+	&.focus{
+		.indicator{
+			left:0;
+			right:0;
+			opacity:1;
 		}
 	}
 	.input:focus{
@@ -131,6 +138,16 @@ header{
 			outline: none;
 			color:rgb(169,169,169);
 		}
+	}
+	.indicator{
+		position:absolute;
+		bottom:0px;
+		left:50%;
+		right:50%;
+		height:2px;
+		opacity:0;
+		background-color:rgb(17,0,207);
+		transition:all 0.35s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 	}
 }
 .isCc{
@@ -235,60 +252,64 @@ header{
 	</div>
 </section>
 <section id="from" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input">
-		<div class="inline" contenteditable="false"><i class="email"></i><span>john@hanusek.com</span><button>&#x2715;</button></div>
-	</div>
+	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"><div class="inline" contenteditable="false"><i class="email"></i><span>john@hanusek.com</span><button>&#x2715;</button></div></div>
 	<label>From</label>
+	<div class="indicator"></div>
 </section>
 <section id="to" class="item">
 	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
 	<label>To</label>
 	<div class="ccbcc"><button>Cc</button> <button>Bcc</button></div>
+	<div class="indicator"></div>
 </section>
 <section id="cc" class="item">
 	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
 	<label>Cc</label>
+	<div class="indicator"></div>
 </section>
 <section id="bcc" class="item">
 	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
 	<label>Bcc</label>
+	<div class="indicator"></div>
 </section>
 <section id="subject" class="item">
 	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
 	<label>Subject</label>
+	<div class="indicator"></div>
 </section>
 <section id="message" class="item">
 	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" id="messageInput" class="input"></div>
 	<label>Message</label>
+	<div class="indicator"></div>
 </section>
 
 <script>
 $(function() {
 	//$('#messageInput').autosize();
 	$('.input').each(function() {
-        var val = $(this).text();
-        if(val.length > 0){
-        	$(this).addClass('typing');
-        }else{
-        	$(this).removeClass('typing');
-        }
+        checkSpace(this);
     });
-    $('.inline:after').each('click', function(){
-    	console.log('hit');
-    	$(this).find('.inline').remove();
+    $('.inline button').on('click', function(event){
+    	var friend = $(this).parent();
+    	var parent = $(friend).parent();
+    	$(friend).remove();
+    	checkSpace(parent);
+
+
     });
     $('.input').keyup(function() {
-        var val = $(this).text();
-        if(val.length > 0){
-        	$(this).addClass('typing');
-        }else{
-        	$(this).removeClass('typing');
-        }
+    	checkSpace(this);
     });
+    $('.input').focus(function(){
+    	$(this).parent().addClass('focus');
+    }).blur(function(){
+    	$(this).parent().removeClass('focus');
+    });
+
     var html = $('#messageInput').text();
     if(html.length > 0){
     	$('#messageInput').prepend('<br /><br />');
-    	$('#messageInput').addClass('typing');
+    	$('#messageInput').parent().addClass('typing');
     }
     $('.ccbcc button:first-child').on('click', function(){
 		$('body').toggleClass('isCc');
@@ -296,6 +317,16 @@ $(function() {
     $('.ccbcc button:nth-child(2)').on('click', function(){
 		$('body').toggleClass('isBcc');
     });
+    function checkSpace(obj){
+    	var val = $(obj).text();
+     	console.log(val.length);
+
+        if(val.length > 0){
+        	$(obj).parent().addClass('typing');
+        }else{
+        	$(obj).parent().removeClass('typing');
+        }
+    }
 });
 
 </script>
