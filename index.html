@@ -46,8 +46,55 @@ header{
 	color:rgb(48,48,48);
 	background-color:rgb(242,242,242);
 }
+.inline{
+	font-size: 14px;
+	line-height: 28px;
+	display:inline-block;
+	margin-right:14px;
+	i{
+		vertical-align: middle;
+		display:inline-block;
+		background-color:#000;
+		width:16px;
+		height:16px;
+		margin:3px 8px 3px 0;
+	}
+	span{
+		vertical-align: middle;
+		display:inline-block;
+		padding:0px;
+	}
+	button{
+		vertical-align: middle;
+		display:inline-block;
+		width:28px;
+		height:28px;
+		margin:3px 8px 3px 4px;
+		font-size:18px;
+		border:0;
+		background-color: transparent;	
+		outline: none;
+		color:rgb(169,169,169);
+	}
+	&.attachment{
+		display:block;
+		background-color:rgb(215,215,215);
+		border-radius: 4px;
+		padding-left:12px;
+		margin:12px 0;
+		i{
+			margin:8px 8px 8px 0;
+		}
+		button{
+			float:right;
+			padding:0;
+			margin:0;
+		}
+	}
+}
 .item{
 	border-bottom:1px solid rgba(0,0,0,0.1);
+	width:100%;
 	position:relative;
 	background-color: #FFF;
 	overflow:hidden;
@@ -89,6 +136,11 @@ header{
 			margin-right:8px;
 		}
 	}
+	&#attachments{
+		.input{
+			transition:all 0.35s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+		}
+	}
 	&.typing .input,
 	.input:focus{
 		padding-top:24px;
@@ -107,37 +159,6 @@ header{
 	.input:focus{
 		+ label{
 			color:rgb(17,0,207);
-		}
-	}
-	.inline{
-		font-size: 14px;
-		line-height: 27px;
-		display:inline-block;
-		margin-right:14px;
-		i{
-			vertical-align: middle;
-			display:inline-block;
-			background-color:#000;
-			width:16px;
-			height:16px;
-			margin:3px 8px 3px 0;
-		}
-		span{
-			vertical-align: middle;
-			display:inline-block;
-			padding:0px;
-		}
-		button{
-			vertical-align: middle;
-			display:inline-block;
-			width:27px;
-			height:27px;
-			margin:3px 8px 3px 4px;
-			font-size:18px;
-			border:0;
-			background-color: transparent;	
-			outline: none;
-			color:rgb(169,169,169);
 		}
 	}
 	.indicator{
@@ -225,7 +246,7 @@ header{
   		justify-content: center;
 
   		&.open{
-  			height:32*3px;
+  			height:37*3px;
   		}
 	}
 	.accountList{
@@ -236,8 +257,8 @@ header{
 		margin:0;
 		background-color:rgb(242,242,242);
 		li{
-			height:16px;
-			padding:8px 12px;
+			height:28px;
+			padding:4px 12px;
 			line-height: 16px;
 			border-bottom:1px solid rgba(0,0,0,0.1);
 		}
@@ -324,6 +345,11 @@ header{
 	<label>Message</label>
 	<div class="indicator"></div>
 </section>
+<section id="attachments" class="item">
+	<div contenteditable="false" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" id="messageInput" class="input"><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>123.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>sdfg.png</span><button>&#x2715;</button></div></div>
+	<label>Attachments</label>
+	<div class="indicator"></div>
+</section>
 
 <script>
 $(function() {
@@ -336,7 +362,9 @@ $(function() {
     $('.inline button').on('click', function(event){
     	var friend = $(this).parent();
     	var parent = $(friend).parent();
-    	$(friend).remove();
+    	$(friend).fadeOut( 500, function() {
+    		$(friend).remove();
+  		});
     	checkSpace(parent);
     });
     $('.input').keyup(function() {
