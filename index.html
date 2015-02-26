@@ -16,10 +16,10 @@ body{
 	font-family:Avenir, Helvetica, san-serif;
 	box-sizing:border-box;
 	-webkit-tap-highlight-color: transparent;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 150%;
 	min-height: 32px;
-	padding:8px 12px;
+	padding:10px 12px;
 	outline: none;
 	background-color: transparent;
 	color:rgb(48,48,48);
@@ -29,8 +29,9 @@ body{
 }
 label{
 	position:absolute;
-	top:16px;
-	font-size:16px;
+	pointer-events: none;
+	top:12px;
+	font-size:18px;
 	left:12px;
 	z-index:0;
 	color:rgb(169,169,169);
@@ -38,7 +39,7 @@ label{
 }
 header{
 	border-bottom:1px solid rgba(0,0,0,0.1);
-	font-size: 12px;
+	font-size: 14px;
 	padding:16px 12px 6px 12px;
 	text-transform: uppercase;
 	color:rgb(48,48,48);
@@ -51,8 +52,10 @@ header{
 	background-color: #FFF;
 	.ccbcc{
 		position:absolute;
-		top:16px;
+		top:12px;
 		right:16px;
+		font-weight: 700;
+		color:rgb(169,169,169);
 	}
 	&#message{
 		height:auto;
@@ -69,7 +72,7 @@ header{
 		padding-top:24px;
 		+ label{
 			top:4px;
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 	.input:focus{
@@ -134,7 +137,7 @@ header{
 <section id="to" class="item">
 	<div contenteditable="true" spellcheck="false" class="input"></div>
 	<label>To</label>
-	<div class="ccbcc">cc/bcc</div>
+	<div class="ccbcc">Cc Bcc</div>
 </section>
 <section id="subject" class="item">
 	<div contenteditable="true" spellcheck="false" class="input"></div>
