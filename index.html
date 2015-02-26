@@ -101,6 +101,37 @@ header{
 			color:rgb(17,0,207);
 		}
 	}
+	.inline{
+		font-size: 14px;
+		line-height: 27px;
+		display:inline-block;
+		margin-right:14px;
+		i{
+			vertical-align: middle;
+			display:inline-block;
+			background-color:#000;
+			width:16px;
+			height:16px;
+			margin:3px 8px 3px 0;
+		}
+		span{
+			vertical-align: middle;
+			display:inline-block;
+			padding:0px;
+		}
+		button{
+			vertical-align: middle;
+			display:inline-block;
+			width:27px;
+			height:27px;
+			margin:3px 8px 3px 4px;
+			font-size:18px;
+			border:0;
+			background-color: transparent;	
+			outline: none;
+			color:rgb(169,169,169);
+		}
+	}
 }
 .isCc{
 	.item{
@@ -204,7 +235,9 @@ header{
 	</div>
 </section>
 <section id="from" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
+	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input">
+		<div class="inline" contenteditable="false"><i class="email"></i><span>john@hanusek.com</span><button>&#x2715;</button></div>
+	</div>
 	<label>From</label>
 </section>
 <section id="to" class="item">
@@ -232,6 +265,18 @@ header{
 <script>
 $(function() {
 	//$('#messageInput').autosize();
+	$('.input').each(function() {
+        var val = $(this).text();
+        if(val.length > 0){
+        	$(this).addClass('typing');
+        }else{
+        	$(this).removeClass('typing');
+        }
+    });
+    $('.inline:after').each('click', function(){
+    	console.log('hit');
+    	$(this).find('.inline').remove();
+    });
     $('.input').keyup(function() {
         var val = $(this).text();
         if(val.length > 0){
