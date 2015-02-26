@@ -48,14 +48,27 @@ header{
 .item{
 	border-bottom:1px solid rgba(0,0,0,0.1);
 	position:relative;
-	min-height:48px;
 	background-color: #FFF;
+	overflow:hidden;
 	.ccbcc{
 		position:absolute;
-		top:12px;
+		top:8px;
 		right:16px;
-		font-weight: 700;
-		color:rgb(169,169,169);
+		button{
+			font-weight: 700;
+			font-size:18px;
+			line-height: 150%;
+			border:0;
+			background-color: transparent;
+			color:rgb(169,169,169);
+			outline: none;
+		}
+	}
+	&#bcc,
+	&#cc{
+		height:0;
+		border:0;
+		opacity:0;
 	}
 	&#message{
 		height:auto;
@@ -66,7 +79,6 @@ header{
 			margin-right:8px;
 		}
 	}
-	overflow:hidden;
 	.input.typing,
 	.input:focus{
 		padding-top:24px;
@@ -78,6 +90,34 @@ header{
 	.input:focus{
 		+ label{
 			color:rgb(17,0,207);
+		}
+	}
+}
+.isCc{
+	.item{
+		.ccbcc{
+			button:first-child{
+				color:rgb(48,48,48);
+			}
+		}
+		&#cc{
+			height:auto;
+			border-bottom:1px solid rgba(0,0,0,0.1);
+			opacity:1;
+		}
+	}
+}
+.isBcc{
+	.item{
+		.ccbcc{
+			button:nth-child(2){
+				color:rgb(48,48,48);
+			}
+		}
+		&#bcc{
+			height:auto;
+			border-bottom:1px solid rgba(0,0,0,0.1);
+			opacity:1;
 		}
 	}
 }
@@ -137,7 +177,15 @@ header{
 <section id="to" class="item">
 	<div contenteditable="true" spellcheck="false" class="input"></div>
 	<label>To</label>
-	<div class="ccbcc">Cc Bcc</div>
+	<div class="ccbcc"><button>Cc</button> <button>Bcc</button></div>
+</section>
+<section id="cc" class="item">
+	<div contenteditable="true" spellcheck="false" class="input"></div>
+	<label>Cc</label>
+</section>
+<section id="bcc" class="item">
+	<div contenteditable="true" spellcheck="false" class="input"></div>
+	<label>Bcc</label>
 </section>
 <section id="subject" class="item">
 	<div contenteditable="true" spellcheck="false" class="input"></div>
@@ -164,6 +212,12 @@ $(function() {
     	$('#messageInput').prepend('<br /><br />');
     	$('#messageInput').addClass('typing');
     }
+    $('.ccbcc button:first-child').on('click', function(){
+		$('body').toggleClass('isCc');
+    });
+    $('.ccbcc button:nth-child(2)').on('click', function(){
+		$('body').toggleClass('isBcc');
+    });
 });
 
 </script>
