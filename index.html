@@ -3,113 +3,8 @@
 
 <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <style type="text/less">
-        body{ 
-        	margin:0; 
-        	padding:0; 
-        	font-family:Avenir, Helvetica, san-serif; 
-        	background-color:rgb(242,242,242);
-        }
-        button{
-        	background: transparent;
-        	border-radius: 0;
-        	border:1px solid #58585b;
-
-        	font-size: 18px;
-        	padding:14px 20px;
-        }
-        input{
-         	background: transparent;
-        	border-radius: 0;
-        	border:1px solid #58585b;   
-
-         	font-size: 18px;
-        	padding:14px 20px;    	
-        }
-        header{
-        	height:80px;
-        	width:100%;
-        	box-sizing:border-box;
-        	padding:20px;
-
-        	h1{
-				font-style: Helvetica san-serif;
-				font-weight: 200;
-				font-size: 36px;
-				line-height: 52px;
-				margin:0;
-				padding:0;   
-				float:left;    		
-        	}
-        	.search{
-        		float:right;
-        		text-align: right;
-        	}
-
-        }
-        .sections{ 
-        	display:flex; 
-        	display : -webkit-flex;
-        	overflow: hidden; 
-        	padding:10px;
-        	section{ 
-        		&.active{ 
-        			flex:3;
-        			-webkit-flex: 3; 
-        			.wrap{
-        				.content{ 
-        					opacity:1;
-        				}
-        			}
-        		}
-        		flex: 0.2; 
-        		-webkit-flex: 0.2; 
-        		overflow-y: auto;
-        		background-color:#58585b;
-        		color:#FFF; 
-        		margin:0px 10px; 
-        		padding:20px;
-        		transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-        		position:relative;
-        		a{
-        			color:rgba(255,255,255,0.8);
-        		}
-        		.wrap{
-
-        			display:block;
-
-	        		.content{ 
-	        			opacity:0; 
-        				transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-	        		}
-	        	}
-        		h2{
-        			position: absolute;
-        			display:block;
-        			width:200px;
-        			height:200px;
-        			bottom:20px;
-        			right:-124px;
-        			&.more{
-        				right:-154px;
-        			}
-    				padding:0; 
-    				margin:0;
-    				transform: rotate(-90deg); 
-    				-webkit-transform: rotate(-90deg); 
-
-    				font-style: Helvetica san-serif;
-    				font-weight: 200;
-    				font-size: 24px;
-    			} 
-
-        	} 
-        }
-
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.4.0/less.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="inc/css/style.css">
     <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.18/jquery.autosize.min.js" type="text/javascript"></script>
 
 </head>
 
@@ -124,81 +19,243 @@
     </header>
     <div class="sections">
         <section id="section0" class="active">
-       	    <h2>Phase <br />of Development</h2>
-        	<div class="wrap">
-	            <div class="content">
-	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
-	                <ul>
-	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
-	                </ul>
-	            </div>
-            </div>
-        </section>
-
-
-        <section id="section1">
-        	<div class="wrap">
-       	        <h2 class="more">Tumor Type</h2>
-	            <div class="content">
-	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
-	                <ul>
-	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
-	                </ul>
-	            </div>
-            </div>
-        </section>
-
-        <section id="section2">
+            <h2>Overview</h2>
             <div class="wrap">
-	            <h2>Pathways<br /> of Development</h2>
-	            <div class="content">
-	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
-	                <ul>
-	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
-	                </ul>
-	            </div>
+                <div class="content">
+                    <h3>Welcome</h3>
+                    <p>Welcome to the Bayer Oncology Pipeline navigator. Lorem ipsum dolor sit amet, proin amet, magna diam cursus ultrices aenean nulla luctus, dolor tincidunt odio a lacus vitae, nunc amet eu eros morbi vel, in laoreet vel mauris facilisis. </p>
+                </div>
+            </div>
+        </section>
+        <section id="section1">
+       	    <h2>Phase of Development</h2>
+        	<div class="wrap">
+                <div id="page0" class="section_page splash active">
+                    <div class="splash_wrap">
+                        <div class="nav">
+                            <ul>
+                                <li>Preclinical</li>
+                                <li>Phase 1</li>
+                                <li>Phase 2</li>
+                                <li>Phase 3</li>
+                                <li>Phase 4</li>
+                            </ul>
+                        </div>
+        	            <div id="phase0" class="phase active">
+                            <div class="phase_content">
+                                <h3>Preclinical</h3>
+            	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
+            	                <ul>
+                                    <li>Goto  <a href="javascript:gotoSection(1);">Phase of Development</a></li>
+                                    <li>Goto  <a href="javascript:gotoSection(2);">Tumor Type</a></li>
+                                    <li>Goto  <a href="javascript:gotoSection(3);">Pathways of Development</a></li>
+                                    <li>Goto  <a href="javascript:gotoSection(4);">Clinical Trials</a></li>
+                                    <li>Goto  <a href="javascript:gotoSection(5);">Highlighted Compounds</a></li>
+            	                </ul>
+                            </div>
+        	            </div>
+                        <div id="phase1" class="phase">
+                            <div class="phase_content">
+                                <ul>
+                                    <li><a href="javascript:gotoPage(1);">Anetumab ravantansine (Mesothelin-ADC)</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PSMA BiTE Antibody</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PI3K Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">FGFR2 Antibody</a></li>
+                                    <li><a href="javascript:gotoPage(1);">Pan-FGFR Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">Allosteric AKT1/2 Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PTEFb Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">MPS1 Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">C4.4a-ADC</a></li>
+                                    <li><a href="javascript:gotoPage(1);">FGFR2-ADC</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="phase2" class="phase">
+                            <div class="phase_content">
+                                <ul>
+                                    <li><a href="javascript:gotoPage(1);">Pan-FGFR Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">Allosteric AKT1/2 Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PTEFb Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">MPS1 Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">C4.4a-ADC</a></li>
+                                    <li><a href="javascript:gotoPage(1);">FGFR2-ADC</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="phase3" class="phase">
+                            <div class="phase_content">     
+                                <ul>
+                                    <li><a href="javascript:gotoPage(1);">Anetumab ravantansine (Mesothelin-ADC)</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PSMA BiTE Antibody</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PI3K Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">FGFR2 Antibody</a></li>
+                                    <li><a href="javascript:gotoPage(1);">Pan-FGFR Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">Allosteric AKT1/2 Inhibitor</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="phase3" class="phase">
+                            <div class="phase_content">        
+                                <ul>
+                                    <li><a href="javascript:gotoPage(1);">Anetumab ravantansine (Mesothelin-ADC)</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PSMA BiTE Antibody</a></li>
+                                    <li><a href="javascript:gotoPage(1);">PI3K Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">MPS1 Inhibitor</a></li>
+                                    <li><a href="javascript:gotoPage(1);">C4.4a-ADC</a></li>
+                                    <li><a href="javascript:gotoPage(1);">FGFR2-ADC</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page1" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(0);">&laquo; Phase 1</a><div class="page_name">FGFR2 Antibody</div></div>
+                        <div class="page_content">
+                            <ul class="page_nav">
+                                <li class="active">Overview</li>
+                                <li>MOA Clinical</li>
+                                <li>Trials</li>
+                            </ul>
+                            <h3>Description</h3>
+                            <p>Copanlisib (BAY 80-6946) is a pan phosphoinositide 3-kinase (Pl3K) inhibitor with predominant alpha and delta inhibitory activity studied in preclinical tumor models with Pl3KCA mutation, PTEN deletion, and/or HER2 overexpression.1</p>
+                            <h3>Area{s) of Interest </h3>
+                            <p>Advanced Cancer, Relapsed, Indolent or Aggressive Non-Hodgkin's Lymphomas (NHL), and Breast Cancer</p>
+                            <h3>Proposed Mechanism of Action</h3>
+                            <p>Copanlisib is a pan Pl3K inhibitor with sub-nMIC50 against Pl3Ka/8.1 Pl3K-8 may play a role in regulating downstream events of the B-cell receptor (BCR).2 Copanlisib demonstrated Pl3K inhibition in preclinical studies assessed by cellular Pl3K pathway inhibition and apoptosis induction in vitro in solid tumor and lymphoma cell lines. Copanlisib may contribute to the kinetics of apoptosis through inhibiting both p-AKT and p-ERK. Copanlisib has been studied in multiple tumor xenograft models of different histologic types with PIK3CA mutations or PTEN deletions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="page2" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(0);">&laquo; Phase</a></div>
+                        <div class="page_content">
+                            <h3>Page 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(0);">&laquo; Phase</a></div>
+                        <div class="page_content">
+                            <h3>Page 3</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(0);">&laquo; Phase</a></div>
+                        <div class="page_content">
+                            <h3>Page 4</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section2">
+            <h2>Tumor Type</h2>
+            <div class="wrap">
+                <div id="page5" class="section_page splash active">
+                    <div class="splash_wrap">
+                        <div class="nav">
+                            <ul>
+                                <li>Preclinical</li>
+                                <li>Phase 1</li>
+                                <li>Phase 2</li>
+                                <li>Phase 3</li>
+                                <li>Phase 4</li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
+                            <ul>
+                                <li>Goto  <a href="javascript:gotoSection(1);">Phase of Development</a></li>
+                                <li>Goto  <a href="javascript:gotoSection(2);">Tumor Type</a></li>
+                                <li>Goto  <a href="javascript:gotoSection(3);">Pathways of Development</a></li>
+                                <li>Goto  <a href="javascript:gotoSection(4);">Clinical Trials</a></li>
+                                <li>Goto  <a href="javascript:gotoSection(5);">Highlighted Compounds</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="page6" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(5);">&laquo; Phase</a></div>
+                        <div class="page_content">
+                            <h3>Page 1</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="page7" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(5);">&laquo; Phase</a></div>
+                        <div class="page_content">
+                            <h3>Page 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="page8" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(5);">&laquo; Phase</a></div>
+                        <div class="page_content">
+                            <h3>Page 3</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="page9" class="section_page">
+                    <div class="page_wrap">
+                        <div class="breadcrumb"><a href="javascript:gotoPage(5);">&laquo; Phase</a></div>
+                        <div class="page_content">
+                            <h3>Page 4</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="section3">
-        	<div class="wrap">
-	            <h2 class="more">Clinical Trials </h2>
+            <h2>Pathways of Development</h2>
+            <div class="wrap">
 	            <div class="content">
 	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
 	                <ul>
-	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(1);">Phase of Development</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(2);">Tumor Type</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(3);">Pathways of Development</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(4);">Clinical Trials</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(5);">Highlighted Compounds</a></li>
 	                </ul>
 	            </div>
             </div>
         </section>
+
         <section id="section4">
+            <h2>Clinical Trials </h2>
         	<div class="wrap">
-        		<h2>Highlighted<br /> Compounds</h2>
+	            <div class="content">
+	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
+	                <ul>
+                        <li>Goto  <a href="javascript:gotoSection(1);">Phase of Development</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(2);">Tumor Type</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(3);">Pathways of Development</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(4);">Clinical Trials</a></li>
+                        <li>Goto  <a href="javascript:gotoSection(5);">Highlighted Compounds</a></li>
+	                </ul>
+	            </div>
+            </div>
+        </section>
+        <section id="section5">
+            <h2>Highlighted Compounds</h2>
+        	<div class="wrap">
 	            <div class="content">
 	           	 	<p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes 
 	           	 	demonstraverunt lectores legere me lius quod ii</p>
 	                <ul>
-	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
-	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(1);">Phase of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(2);">Tumor Type</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(3);">Pathways of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(4);">Clinical Trials</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(5);">Highlighted Compounds</a></li>
 	                </ul>
 	            </div>
         	</div>
@@ -207,18 +264,42 @@
     <script>
     $(function() {
     	window.gotoSection = function(section){
-            $('#section'+section).addClass('active').siblings().removeClass('active');
+            $('#section'+section).addClass('active').siblings().removeClass('active').find('.section_page').removeClass('active');
+            $('#section'+section).find('.splash').addClass('active');
     	}
+        window.gotoPage = function(page){
+            $('#page'+page).addClass('active').siblings().removeClass('active');
+        }
+        window.gotoPhase = function(page){
+            $('#phase'+page).addClass('active').siblings().removeClass('active');
+        }
+        function setDimension(){
+            $('.sections').height($(window).height() - 110);
+            $('section .wrap').width($('section.active').innerWidth());
+            $('.page_wrap').width($('section.active').innerWidth());
+            $('.splash_wrap .phase_content').width($('section.active').innerWidth()-180);
+        }
         $('section').each(function(index) {
         	$(this).on('click', function() {
-        		if($(this).not('.active')){
+        		if(!$(this).hasClass('active')){
         			gotoSection(index);
         		}
             });
         });
+
+        $('.splash .nav li').each(function(index){
+            $(this).on('click', function() {
+                if(!$(this).hasClass('active')){
+                    gotoPhase(index);
+                }
+            });           
+        });
+
         $(window).load(function(){
-        	$('.sections').height($(window).height() - 110);
-        	$('section .wrap').width($('section.active').innerWidth()-40);
+            setDimension();
+        });
+        $(window).resize(function(){
+            setDimension();
         });
     });
     </script>

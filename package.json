@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-less": "*",
+    "gulp-concat": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-minify-css": "*",
+    "gulp-livereload": "*",
+    "tiny-lr": "*"
+  }
+}
