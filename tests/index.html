@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A4th1RQAelzqgY7wL53UGQt" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+</body>
+<script>
+$(function(){
+	var $time = $('iframe').contents().find( ".time-spent" );
+	$('iframe').after('<h2>'+$time+'</h2>');
+	console.log($time.text());
+
+	setInterval(function() {
+		$time = $('iframe').contents().find( ".time-spent" );
+		$('h2').text($time.text());
+	}, 6);
+
+});
+</script>
+</html>

@@ -1,411 +1,224 @@
 <!doctype html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<style type="text/less">
-body{
-	margin:0;
-	padding:0;
-	font-family:Avenir, Helvetica, san-serif;
-	background-color:rgb(242,242,242);
-	height:1000px;
-}
-.input{
-	width:100%;
-	border:0;
-	font-family:Avenir, Helvetica, san-serif;
-	box-sizing:border-box;
-	-webkit-tap-highlight-color: transparent;
-	font-size: 18px;
-	line-height: 150%;
-	min-height: 48px;
-	padding:10px 12px;
-	outline: none;
-	background-color: transparent;
-	color:rgb(48,48,48);
-	transition:all 0.2s ease-in-out;
-	white-space: nowrap;
-	z-index:1;
-}
-label{
-	position:absolute;
-	pointer-events: none;
-	top:12px;
-	font-size:18px;
-	left:12px;
-	z-index:0;
-	color:rgb(169,169,169);
-	transition:all 0.2s ease-in-out;
-}
-header{
-	border-bottom:1px solid rgba(0,0,0,0.1);
-	font-size: 14px;
-	padding:16px 12px 6px 12px;
-	text-transform: uppercase;
-	color:rgb(48,48,48);
-	background-color:rgb(242,242,242);
-}
-.inline{
-	font-size: 14px;
-	line-height: 28px;
-	display:inline-block;
-	margin-right:14px;
-	i{
-		vertical-align: middle;
-		display:inline-block;
-		background-color:#000;
-		width:16px;
-		height:16px;
-		margin:3px 8px 3px 0;
-	}
-	span{
-		vertical-align: middle;
-		display:inline-block;
-		padding:0px;
-	}
-	button{
-		vertical-align: middle;
-		display:inline-block;
-		width:28px;
-		height:28px;
-		margin:3px 8px 3px 4px;
-		font-size:18px;
-		border:0;
-		background-color: transparent;	
-		outline: none;
-		color:rgb(169,169,169);
-	}
-	&.attachment{
-		display:block;
-		background-color:rgb(215,215,215);
-		border-radius: 4px;
-		padding-left:12px;
-		margin:12px 0;
-		i{
-			margin:8px 8px 8px 0;
-		}
-		button{
-			float:right;
-			padding:0;
-			margin:0;
-		}
-	}
-}
-.item{
-	border-bottom:1px solid rgba(0,0,0,0.1);
-	width:100%;
-	position:relative;
-	background-color: #FFF;
-	overflow:hidden;
-	transition:all 0.2s ease-in-out;
-	.ccbcc{
-		position:absolute;
-		top:8px;
-		right:16px;
-		button{
-			font-weight: 700;
-			font-size:18px;
-			line-height: 150%;
-			border:0;
-			background-color: transparent;
-			color:rgb(169,169,169);
-			outline: none;
-			width:auto;
-			padding-left:0;
-			padding-right:0;
-			-webkit-tap-highlight-color: transparent;
-		}
-	}
-	&#bcc,
-	&#cc{
-		border:0;
-		.input{
-			min-height: 0;
-			height: 0;
-			padding:0 12px;
-			margin:0;
-		}
-	}
-	&#message{
-		height:auto;
-		.input{
-			overflow-x:scroll;
-			min-height: 92px;
-			white-space: normal;
-			margin-right:8px;
-		}
-	}
-	&#attachments{
-		.input{
-			transition:all 0.35s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-		}
-	}
-	&.typing .input,
-	.input:focus{
-		padding-top:24px;
-		+ label{
-			top:4px;
-			font-size: 14px;
-		}
-	}
-	&.focus{
-		.indicator{
-			left:0;
-			right:0;
-			opacity:1;
-		}
-	}
-	.input:focus{
-		+ label{
-			color:rgb(17,0,207);
-		}
-	}
-	.indicator{
-		position:absolute;
-		bottom:0px;
-		left:50%;
-		right:50%;
-		height:2px;
-		opacity:0;
-		background-color:rgb(17,0,207);
-		transition:all 0.35s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-	}
-}
-.isCc{
-	.item{
-		.ccbcc{
-			button:first-child{
-				color:rgb(48,48,48);
-			}
-		}
-		&#cc{
-			height:auto;
-			border-bottom:1px solid rgba(0,0,0,0.1);
-			min-height: 48px;
-			.input{
-				height: auto;
-				padding:10px 12px;
-			}
-			.input.typing,
-			.input:focus{
-				padding-top:24px;
-				+ label{
-					top:4px;
-					font-size: 14px;
-				}
-			}
-		}
-	}
-}
-.isBcc{
-	.item{
-		.ccbcc{
-			button:nth-child(2){
-				color:rgb(48,48,48);
-			}
-		}
-		&#bcc{
-			height:auto;
-			border-bottom:1px solid rgba(0,0,0,0.1);
-			.input{
-				height: auto;
-				min-height: 48px;
-				padding:10px 12px;
-			}
-			.input.typing,
-			.input:focus{
-				padding-top:24px;
-				+ label{
-					top:4px;
-					font-size: 14px;
-				}
-			}
-		}
-	}
-}
-#fromSelector{
-	position:relative;
-	height: 40px;
-	padding:9px;
-	margin:0;
-	background-color:#FFF;
-	z-index:9999;
-	.accountDrawer{
-		height:0px;
-		display:block;
-		position:absolute;
-		top:60px;
-		left:0;
-		right:0;
-		overflow:hidden;
-		transition:height 0.35s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-
- 		display: flex;
-  		align-items: center;
-  		justify-content: center;
-
-  		&.open{
-  			height:37*3px;
-  		}
-	}
-	.accountList{
-		align-self: flex-end;
-		width:100%;
-		height:auto;
-		padding:0;
-		margin:0;
-		background-color:rgb(242,242,242);
-		li{
-			height:28px;
-			padding:4px 12px;
-			line-height: 16px;
-			border-bottom:1px solid rgba(0,0,0,0.1);
-		}
-	}
-	.scroll{
-	    overflow-x: scroll;
-	    overflow-y: hidden;
-	    -webkit-overflow-scrolling: touch;
-	    height: 58px;
-	    white-space:nowrap;
-		.account{
-			display:inline-block;
-			margin:4px;
-			width:32px;
-			height:32px;
-			border-radius: 5px;
-			background-color: rgb(48,48,48);
-		}
-	}
-	.scroll:-webkit-scrollbar { 
-	    width: 0 !important;
-	    display:none;
-	 }
-}
-
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.4.0/less.min.js" type="text/javascript"></script>
-<script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.18/jquery.autosize.min.js" type="text/javascript"></script>
-</head>
-<body>
-<header class="head">
-	Choose From Account
-</header>
-<section id="fromSelector">
-	<div class="scroll">
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-		<div class="account"></div>
-	</div>
-	<div class="accountDrawer">
-		<ul class="accountList">
-			<li><div class="inline" contenteditable="false"><i class="email"></i><span>john@hanusek.com</span></div></li>
-			<li><div class="inline" contenteditable="false"><i class="email"></i><span>john@hanusek.com</span></div></li>
-			<li><div class="inline" contenteditable="false"><i class="email"></i><span>john@hanusek.com</span></div></li>
-		</ul>
-	</div>
-</section>
-<section id="from" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"><div class="inline" contenteditable="false"><i class="email"></i><span>john@hanusek.com</span><button>&#x2715;</button></div></div>
-	<label>From</label>
-	<div class="indicator"></div>
-</section>
-<section id="to" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
-	<label>To</label>
-	<div class="ccbcc"><button>Cc</button> <button>Bcc</button></div>
-	<div class="indicator"></div>
-</section>
-<section id="cc" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
-	<label>Cc</label>
-	<div class="indicator"></div>
-</section>
-<section id="bcc" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
-	<label>Bcc</label>
-	<div class="indicator"></div>
-</section>
-<section id="subject" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" class="input"></div>
-	<label>Subject</label>
-	<div class="indicator"></div>
-</section>
-<section id="message" class="item">
-	<div contenteditable="true" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" id="messageInput" class="input"></div>
-	<label>Message</label>
-	<div class="indicator"></div>
-</section>
-<section id="attachments" class="item">
-	<div contenteditable="false" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" id="messageInput" class="input"><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>12345asdfg.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>123.png</span><button>&#x2715;</button></div><div class="inline attachment" contenteditable="false"><i class="email"></i><span>sdfg.png</span><button>&#x2715;</button></div></div>
-	<label>Attachments</label>
-	<div class="indicator"></div>
-</section>
-
-<script>
-$(function() {
-
-	$('.input').each(function() {
-        checkSpace(this);
-    });
-
-
-    $('.inline button').on('click', function(event){
-    	var friend = $(this).parent();
-    	var parent = $(friend).parent();
-    	$(friend).fadeOut( 500, function() {
-    		$(friend).remove();
-  		});
-    	checkSpace(parent);
-    });
-    $('.input').keyup(function() {
-    	checkSpace(this);
-    });
-
-    $('.input').focus(function(){
-    	$('html, body').animate({scrollTop: $(this).offset().top}, 500);
-    	$(this).parent().addClass('focus');
-    }).blur(function(){
-    	$(this).parent().removeClass('focus');
-    });
-
-    var html = $('#messageInput').text();
-    if(html.length > 0){
-    	$('#messageInput').prepend('<br /><br />');
-    	$('#messageInput').parent().addClass('typing');
-    }
-    $('.ccbcc button:first-child').on('click', function(){
-		$('body').toggleClass('isCc');
-		$('#cc .input').focus();
-    });
-    $('.ccbcc button:nth-child(2)').on('click', function(){
-		$('body').toggleClass('isBcc');
-		$('#bcc .input').focus();
-    });
-    function checkSpace(obj){
-    	var val = $(obj).text();
-
-        if(val.length > 0){
-        	$(obj).parent().addClass('typing');
-        }else{
-        	$(obj).parent().removeClass('typing');
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style type="text/less">
+        body{ 
+        	margin:0; 
+        	padding:0; 
+        	font-family:Avenir, Helvetica, san-serif; 
+        	background-color:rgb(242,242,242);
         }
-    }
-    $('.account').on('click', function(){
-    	$('.accountDrawer').toggleClass('open');
+        button{
+        	background: transparent;
+        	border-radius: 0;
+        	border:1px solid #58585b;
+
+        	font-size: 18px;
+        	padding:14px 20px;
+        }
+        input{
+         	background: transparent;
+        	border-radius: 0;
+        	border:1px solid #58585b;   
+
+         	font-size: 18px;
+        	padding:14px 20px;    	
+        }
+        header{
+        	height:80px;
+        	width:100%;
+        	box-sizing:border-box;
+        	padding:20px;
+
+        	h1{
+				font-style: Helvetica san-serif;
+				font-weight: 200;
+				font-size: 36px;
+				line-height: 52px;
+				margin:0;
+				padding:0;   
+				float:left;    		
+        	}
+        	.search{
+        		float:right;
+        		text-align: right;
+        	}
+
+        }
+        .sections{ 
+        	display:flex; 
+        	overflow: hidden; 
+        	padding:10px;
+        	section{ 
+        		&.active{ 
+        			flex:3;
+        			.wrap{
+        				.content{ 
+        					opacity:1;
+        				}
+        			}
+        		}
+        		flex: 0.2; 
+        		overflow-y: auto;
+        		background-color:#58585b;
+        		color:#FFF; 
+        		margin:0px 10px; 
+        		padding:20px;
+        		transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        		position:relative;
+        		a{
+        			color:rgba(255,255,255,0.8);
+        		}
+        		.wrap{
+
+        			display:block;
+
+	        		.content{ 
+	        			opacity:0; 
+        				transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	        		}
+	        	}
+	        		h2{
+	        			position: absolute;
+	        			display:block;
+	        			width:200px;
+	        			height:200px;
+	        			bottom:20px;
+	        			right:-124px;
+	        			&.more{
+	        				right:-154px;
+	        			}
+	    				padding:0; 
+	    				margin:0;
+	    				transform: rotate(-90deg); 
+
+	    				font-style: Helvetica san-serif;
+	    				font-weight: 200;
+	    				font-size: 24px;
+	    			} 
+
+        	} 
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.4.0/less.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.18/jquery.autosize.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <header class="head">
+        <h1>Bayer Pipeline Navigator</h1>
+        <div class="search">
+        	<input type="text" />
+        	<button onclick="gotoSection(4)">Search</button>
+        	<button>Contact Us</button>
+        </div>
+    </header>
+    <div class="sections">
+        <section id="section0" class="active">
+       	    <h2>Phase <br />of Development</h2>
+        	<div class="wrap">
+	            <div class="content">
+	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
+	                <ul>
+	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
+	                </ul>
+	            </div>
+            </div>
+        </section>
+
+
+        <section id="section1">
+        	<div class="wrap">
+       	        <h2 class="more">Tumor Type</h2>
+	            <div class="content">
+	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
+	                <ul>
+	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
+	                </ul>
+	            </div>
+            </div>
+        </section>
+
+        <section id="section2">
+            <div class="wrap">
+	            <h2>Pathways<br /> of Development</h2>
+	            <div class="content">
+	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
+	                <ul>
+	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
+	                </ul>
+	            </div>
+            </div>
+        </section>
+
+        <section id="section3">
+        	<div class="wrap">
+	            <h2 class="more">Clinical Trials </h2>
+	            <div class="content">
+	                <p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii</p>
+	                <ul>
+	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
+	                </ul>
+	            </div>
+            </div>
+        </section>
+        <section id="section4">
+        	<div class="wrap">
+        		<h2>Highlighted<br /> Compounds</h2>
+	            <div class="content">
+	           	 	<p>Imperdiet doming id quod mazim placerat facer possim assum? Eorum claritatem Investigationes 
+	           	 	demonstraverunt lectores legere me lius quod ii</p>
+	                <ul>
+	                	<li>Goto  <a href="javascript:gotoSection(0);">Phase of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(1);">Tumor Type</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(2);">Pathways of Development</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(3);">Clinical Trials</a></li>
+	                	<li>Goto  <a href="javascript:gotoSection(4);">Highlighted Compounds</a></li>
+	                </ul>
+	            </div>
+        	</div>
+        </section>
+    </div>
+    <script>
+    $(function() {
+    	window.gotoSection = function(section){
+            $('#section'+section).addClass('active').siblings().removeClass('active');
+    	}
+        $('section').each(function(index) {
+        	$(this).on('click', function() {
+        		if($(this).not('.active')){
+        			gotoSection(index);
+        		}
+            });
+        });
+        $(window).load(function(){
+        	$('.sections').height($(window).height() - 110);
+        	$('section .wrap').width($('section.active .wrap').width());
+        });
     });
-
-});
-
-</script>
+    </script>
 </body>
+
 </html>
