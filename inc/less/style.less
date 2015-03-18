@@ -20,6 +20,14 @@ input{
  	font-size: 18px;
 	padding:14px 20px;    	
 }
+.app{
+    margin:0; 
+    padding:0; 
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
 header{
 	height:80px;
 	width:100%;
@@ -42,6 +50,8 @@ header{
 
 }
 .sections{ 
+    flex:1;
+    box-sizing: border-box;
 	display:flex; 
 	display : -webkit-flex;
 	overflow: hidden; 
@@ -68,7 +78,7 @@ header{
 		background-color:#58585b;
 		color:#FFF; 
         border:1px solid #58585b;
-		margin:0px 10px; 
+		margin:0px 2px; 
 		transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
 		position:relative;
 		.wrap{
@@ -88,7 +98,7 @@ header{
             }
             .section_page{
                 flex:0.001;
-                transition: flex 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
 
                 &.active{
                     flex:1;
@@ -101,9 +111,11 @@ header{
                     overflow: hidden;
                     opacity:0;
                     display:flex;
+                    transition: opacity 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
                 }
                 .page_wrap{
                     overflow: hidden;
+                    position:relative;
                     opacity:0;
                     display:flex;
                     flex-direction: column;
@@ -125,27 +137,59 @@ header{
                             color: #FFF;
                         }
                     }
-                    .page_content{
-                        padding:20px 80px 20px 20px;
+                    .page_nav{
+                        background-color:rgb(242,242,242);
+                        list-style: none;
+                        padding:0;
+                        margin:0;
+                        height:40px;
+                        li{
+                            display: inline-block;
+                            margin: 4px;
+                            padding: 4px 8px;
+                            cursor:pointer;
+                            &.active,
+                            &:hover{
+                                background-color: #58585b;
+                                color: #FFF;
+                            }
+                        }
+                    }
+                    .items{
+                        display:flex;
+                        flex:1;
+                        overflow-y: auto;
+                        .item{
+                            flex:0.0001;
+                            overflow: hidden;
+                            transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                            opacity: 0;
+                            &.active{
+                                flex:1;
+                                opacity: 1;
+                            }
+                            .item_content{
+                                padding:20px 80px 20px 20px;
+                                box-sizing: border-box;
+                                img{
+                                    background-color: lighten( #58585b, 60%);
+                                    width:350px;
+                                    height:350px;
+                                    float:left;
+                                    margin: 0 10px 10px 0;
 
-                        .page_nav{
-                            list-style: none;
-                            padding:0;
-                            margin:0;
-                            li{
-                                display: inline-block;
-                                margin: 4px;
-                                padding: 4px 8px;
-                                &.active,
-                                &:hover{
-                                    background-color: #58585b;
-                                    color: #FFF;
                                 }
                             }
                         }
+                    }
+                    .page_content{
+                        box-sizing: border-box;
+                        padding:20px 80px 20px 20px;
+
                         h3{
                             font-weight: 200;
                         }
+
                     }
                 }
             }
@@ -180,11 +224,11 @@ header{
             }
     		.phase{ 
                 flex:0.001;
-				transition: flex 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+				transition: all 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                overflow:hidden;
                 &.active{
                     flex:1;
                     .phase_content{
-                        display:block;
                         opacity:1;
                     }
                 }
@@ -194,7 +238,6 @@ header{
                 .phase_content{
                     padding:20px;
                     opacity:0; 
-                    display:none;
                     color:#58585b; 
                     transition: opacity 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
                 }
@@ -227,4 +270,17 @@ header{
 		} 
 
 	} 
+}
+footer{
+    box-sizing: border-box;
+    height:40px;
+    .disclaimer{
+        padding:4px 15px;
+        width:60%;
+        p{
+            padding:0;
+            margin:0;
+            font-size: 11px;
+        }
+    }
 }
