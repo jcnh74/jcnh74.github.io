@@ -1,0 +1,117 @@
+<html>
+<head>
+	<style>
+		body{
+			margin:0;
+			
+			font-family: Futura, Avenir, Helvetica, San-serif;
+		}
+		h1{
+			font-size: 6em;
+		}
+
+		#page{
+			max-width: 1280px;
+			margin:0 auto;
+		}
+		#header{
+			margin:0 auto;
+			max-width: 1080px;
+			display: flex;
+			justify-content: space-between;
+			padding-top:90px;
+			padding-bottom:30px;
+		}
+		#header .logo{
+			width: 165px;
+		}
+		#header .logo img{
+			width:100%;
+		}
+		#header .menu{
+			padding-top:18px;
+			text-align: right
+		}
+		#header .menu a{
+			display: inline-block;
+			margin-left:20px;
+			font-size: 16px;
+			text-decoration: none;
+			color:black;
+			text-transform: uppercase;
+			font-weight: 500;
+			letter-spacing: 1px;
+			
+
+		}
+		#marquee{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color:white;
+			height:715px;
+			text-align: center;
+			background-color: black;
+
+		}
+		#marquee h1,#marquee p{
+			margin:0;
+		}
+		#marquee h1{
+			text-transform: uppercase;
+		}
+		#marquee .textGroup{
+			max-width: 780px;
+
+		}
+		#marquee .textGroup p{
+			font-size: 2.95em;
+		}
+		#marquee .textGroup p.subtitle{
+			color:red;
+			font-size: 4em;
+		}
+		#video{
+			margin:0 auto;
+			margin-top:-40px;
+			margin-bottom:100px;
+			padding:0;
+			width:1200px;
+			height:1070px;
+			overflow: hidden;
+		}
+		#video video{
+			margin:0 auto;
+
+		}
+	</style>
+
+</head>
+<body>
+<div id="page">
+	<div id="header">
+		<div class="logo"><img src="lexicon-logo.png" /></div>
+		<div class="menu">
+			<a href="#projects">Projects</a>
+			<a href="#approach">Approach</a>
+			<a href="#thefirm">The Firm</a>
+			<a href="#contact">Contact</a>
+		</div>
+	</div>
+	<div id="marquee">
+		<div class="textGroup">
+			<img src="marquee.png">
+<!-- 			<h1>Lexicon</h1>
+			<p class="subtitle">Brand Names That Win</p>
+			<p>We work across categories from start-ups and Silicon Valley innovators to Fortune 500 companies.</p> -->
+		</div>
+	</div>
+	<div id="video">
+		<video width="1200" height="1200" autoplay loop>
+			<source src="NineSquares.mp4" type="video/mp4">
+		</video>
+	</div>
+</div>
+</body>
+</html>
