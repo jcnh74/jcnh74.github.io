@@ -1,5 +1,9 @@
 <html>
 <head>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 	<style>
 		body{
 			margin:0;
@@ -44,7 +48,17 @@
 			
 
 		}
+		#hero{
+			position: relative;
+			width:1200px;
+			height:1070px;
+		}
 		#marquee{
+			position: absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -73,13 +87,18 @@
 			font-size: 4em;
 		}
 		#video{
+			position: absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
 			margin:0 auto;
-			margin-top:-40px;
+			margin-top:-20px;
 			margin-bottom:100px;
 			padding:0;
-			width:1200px;
-			height:1070px;
+			
 			overflow: hidden;
+			background-color: white;
 		}
 		#video video{
 			margin:0 auto;
@@ -99,19 +118,40 @@
 			<a href="#contact">Contact</a>
 		</div>
 	</div>
-	<div id="marquee">
-		<div class="textGroup">
-			<img src="marquee.png">
-<!-- 			<h1>Lexicon</h1>
-			<p class="subtitle">Brand Names That Win</p>
-			<p>We work across categories from start-ups and Silicon Valley innovators to Fortune 500 companies.</p> -->
+	<div id="hero">
+		<div id="marquee">
+			<div class="textGroup">
+				<img src="marquee.png">
+	<!-- 			<h1>Lexicon</h1>
+				<p class="subtitle">Brand Names That Win</p>
+				<p>We work across categories from start-ups and Silicon Valley innovators to Fortune 500 companies.</p> -->
+			</div>
+		</div>
+		<div id="video">
+			<video width="1200" height="1200" autoplay loop>
+				<source src="NineSquares.mp4" type="video/mp4">
+			</video>
 		</div>
 	</div>
-	<div id="video">
-		<video width="1200" height="1200" autoplay loop>
-			<source src="NineSquares.mp4" type="video/mp4">
-		</video>
-	</div>
 </div>
+<script>
+
+(function($){
+
+	function setVideo(){
+		setTimeout(function(){
+			$('#video').fadeOut();
+		},5000);
+		
+	}
+
+
+  	$(window).load(function(){
+  		setVideo()
+  	});
+
+//<?php bloginfo('template_directory'); ?>
+})(jQuery)
+</script>
 </body>
 </html>
