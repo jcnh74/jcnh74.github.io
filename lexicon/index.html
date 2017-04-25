@@ -16,7 +16,7 @@
 
 		#page{
 			max-width: 1280px;
-			margin:0 auto;
+			margin:0 auto 100px auto;
 		}
 		#header{
 			margin:0 auto;
@@ -50,7 +50,7 @@
 		}
 		#hero{
 			position: relative;
-			width:1200px;
+			width:1280px;
 			height:1070px;
 		}
 		#marquee{
@@ -127,9 +127,6 @@
 			</div>
 		</div>
 		<div id="video">
-			<video width="1200" height="990.37" autoplay>
-				<source src="NineSquares_1.mp4" type="video/mp4">
-			</video>
 		</div>
 	</div>
 </div>
@@ -151,8 +148,8 @@ req.onload = function() {
       // and we can set it as source on the video element
       //video.src = vid;
       setTimeout(function(){
-      	$('#video video source').attr('src',vid);
-     	 $('#video').fadeIn();
+      	$('#video').append('<video width="1280" height="1056.4" autoplay><source src="NineSquares_1.mp4" type="video/mp4"></video>');
+     	 $('#video').hide().delay(100).fadeIn();
       },5000);
    }
 }
