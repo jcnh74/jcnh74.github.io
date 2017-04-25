@@ -135,7 +135,7 @@
 (function($){
 
 var req = new XMLHttpRequest();
-req.open('GET', 'NineSquares_1.mp4', true);
+req.open('GET', 'NineSquares_720.m4v', true);
 req.responseType = 'blob';
 
 req.onload = function() {
@@ -148,7 +148,7 @@ req.onload = function() {
       // and we can set it as source on the video element
       //video.src = vid;
       setTimeout(function(){
-      	$('#video').append('<video width="1280" height="1056.4" autoplay><source src="NineSquares_1.mp4" type="video/mp4"></video>');
+      	$('#video').append('<video width="1280" height="1056.4" autoplay><source src="NineSquares_720.m4v" type="video/mp4"></video>');
      	 $('#video').hide().delay(100).fadeIn();
       },5000);
    }
