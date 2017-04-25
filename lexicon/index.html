@@ -93,12 +93,11 @@
 			right:0;
 			bottom:0;
 			margin:0 auto;
-			margin-top:-20px;
-			margin-bottom:100px;
 			padding:0;
 			
 			overflow: hidden;
 			background-color: white;
+			display: none;
 		}
 		#video video{
 			margin:0 auto;
@@ -128,8 +127,8 @@
 			</div>
 		</div>
 		<div id="video">
-			<video width="1200" height="1200" autoplay loop>
-				<source src="NineSquares.mp4" type="video/mp4">
+			<video width="1200" height="990.37" autoplay>
+				<source src="NineSquares_1.mp4" type="video/mp4">
 			</video>
 		</div>
 	</div>
@@ -138,17 +137,44 @@
 
 (function($){
 
-	function setVideo(){
-		setTimeout(function(){
-			$('#video').fadeOut();
-		},5000);
+var req = new XMLHttpRequest();
+req.open('GET', 'NineSquares_1.mp4', true);
+req.responseType = 'blob';
+
+req.onload = function() {
+   // Onload is triggered even on 404
+   // so we need to check the status code
+   if (this.status === 200) {
+      var videoBlob = this.response;
+      var vid = URL.createObjectURL(videoBlob); // IE10+
+      // Video is now downloaded
+      // and we can set it as source on the video element
+      //video.src = vid;
+      setTimeout(function(){
+      	$('#video video source').attr('src',vid);
+     	 $('#video').fadeIn();
+      },5000);
+   }
+}
+req.onerror = function() {
+   // Error
+}
+
+req.send();
+
+	// function setVideo(){
+	// 	setTimeout(function(){
+			
+	// 		$('#video video source').attr('src','NineSquares_1.mp4');
+	// 		$('#video').fadeIn();
+	// 	},5000);
 		
-	}
+	// }
 
 
-  	$(window).load(function(){
-  		setVideo()
-  	});
+ //  	$(window).load(function(){
+ //  		setVideo()
+ //  	});
 
 //<?php bloginfo('template_directory'); ?>
 })(jQuery)
