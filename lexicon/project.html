@@ -42,6 +42,8 @@
 		#header .menu a{
 			text-decoration: none;
 			color:black;
+			display: inline-block;
+			margin-bottom: 0px;
 		}
 		#header .menu li{
 			position: relative;
@@ -51,8 +53,14 @@
 			text-transform: uppercase;
 			font-weight: 500;
 			letter-spacing: 1px;
-			padding-bottom:10px;
+			padding-bottom:0px;
 			
+		}
+		#header .menu li a span{
+			padding-bottom:10px;
+		}
+		#header .menu li.active a span{
+			border-bottom: 1px solid black;
 		}
 		#header .menu li .submenu{
 			position: absolute;
@@ -82,6 +90,9 @@
 			color: white !important;
 			margin:0;
 			padding:0;
+		}
+		#header .menu li .submenu li a:hover{
+			text-decoration: underline;
 		}
 		#hero{
 			position: relative;
@@ -138,6 +149,14 @@
 			margin:0 auto;
 
 		}
+		#projects{
+			width:1280px;
+
+		}
+		#projects img{
+			width:100%;
+			height: auto;
+		}
 	</style>
 
 </head>
@@ -146,22 +165,22 @@
 	<div id="header">
 		<div class="logo"><a href="/lexicon"><img src="lexicon-logo.png" /></a></div>
 		<ul class="menu">
-			<li>
-				<a href="projects.html">Projects</a>
+			<li class="active">
+				<a href="projects.html"><span>Projects</span></a>
 				<ul class="submenu">
 					<li><a href="projects.html">Corporate</a></li>
 					<li><a href="projects.html">Technology</a></li>
-					<li><a href="projects.html">Start-Ups & Innovations</a></li>
+					<li><a href="projects.html">Start-Ups &amp; Innovations</a></li>
 					<li><a href="projects.html">Consumer</a></li>
 					<li><a href="projects.html">Entertainment</a></li>
 					<li><a href="projects.html">Automotive</a></li>
 					<li><a href="projects.html">Financial</a></li>
-					<li><a href="projects.html">Food & Beverage</a></li>
-					<li><a href="projects.html">Health & Pharma</a></li>
+					<li><a href="projects.html">Food &amp; Beverage</a></li>
+					<li><a href="projects.html">Health &amp; Pharma</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="projects.html">Approach</a>
+				<a href="projects.html"><span>Approach</span></a>
 				<ul class="submenu">
 					<li><a href="#">Strategy</a></li>
 					<li><a href="#">Linguistics</a></li>
@@ -169,7 +188,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="projects.html">The Firm</a>
+				<a href="projects.html"><span>The Firm</span></a>
 				<ul class="submenu">
 					<li><a href="#">About Lexicon</a></li>
 					<li><a href="#">Lexicon's Team</a></li>
@@ -177,70 +196,19 @@
 				</ul>
 			</li>
 			<li>
-				<a href="projects.html">Contact</a>
+				<a href="projects.html"><span>Contact</span></a>
 			</li>
 		</ul>
 	</div>
-	<div id="hero">
-		<div id="marquee">
-			<div class="textGroup">
-				<img src="marquee.png">
+	<div id="projects">
+
+				<img src="project.jpg">
 	<!-- 			<h1>Lexicon</h1>
 				<p class="subtitle">Brand Names That Win</p>
 				<p>We work across categories from start-ups and Silicon Valley innovators to Fortune 500 companies.</p> -->
-			</div>
-		</div>
-		<a href="projects.html">
-			<div id="video">
-			</div>
-		</a>
+
 	</div>
 </div>
-<script>
 
-(function($){
-
-var req = new XMLHttpRequest();
-req.open('GET', 'NineSquares_720.m4v', true);
-req.responseType = 'blob';
-
-req.onload = function() {
-   // Onload is triggered even on 404
-   // so we need to check the status code
-   if (this.status === 200) {
-      var videoBlob = this.response;
-      var vid = URL.createObjectURL(videoBlob); // IE10+
-      // Video is now downloaded
-      // and we can set it as source on the video element
-      //video.src = vid;
-      setTimeout(function(){
-      	$('#video').append('<video width="1280" height="1056.4" autoplay><source src="NineSquares_720.m4v" type="video/mp4"></video>');
-     	 $('#video').hide().delay(100).fadeIn();
-      },5000);
-   }
-}
-req.onerror = function() {
-   // Error
-}
-
-req.send();
-
-	// function setVideo(){
-	// 	setTimeout(function(){
-			
-	// 		$('#video video source').attr('src','NineSquares_1.mp4');
-	// 		$('#video').fadeIn();
-	// 	},5000);
-		
-	// }
-
-
- //  	$(window).load(function(){
- //  		setVideo()
- //  	});
-
-//<?php bloginfo('template_directory'); ?>
-})(jQuery)
-</script>
 </body>
 </html>
