@@ -38,7 +38,7 @@ a{
 	width: 160px;
 	height: 160px;
 	position: relative;
-	margin:0 auto 200px auto;
+	margin:0 auto 15vh auto;
 }
 .hero-content .svg svg{
 	position: absolute;
@@ -153,6 +153,7 @@ a{
 	right:0;
 	bottom:0;
 	background-color: rgba(0,0,0,0.5);
+	z-index: 9999;
 }
 .registration .flex{
 	display: flex;
@@ -234,9 +235,22 @@ a{
 	color: #fff;
 }
 @media only screen and (max-width : 736px) {
+	.hero{
+		height: 90vh;
+	}
+	.hero-content .svg{
+		margin:0 auto 80px auto;
+	}
+	.hero-content p{
+		font-size: 18px;
+	}
 	.footer .grid2,
 	.section.about .grid2{
 		display:block !important;
+	}
+	.section.about .block:nth-child(1),
+	.section.about .block:nth-child(2){
+		padding:20px;
 	}
 	.footer .grid2 .block,
 	.footer .grid2 .block.right{
