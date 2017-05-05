@@ -29,9 +29,13 @@ a,.colortext{
 	margin:0 auto;
 	max-width: 1000px;
 }
+.bind.smaller{
+	max-width: 850px;
+}
 .hero{
 	width:100vw;
 	height: 70vh;
+	min-height: 800px;
 	background-image:url(grey.jpg);
 	background-position: center;
 	background-size: cover;
@@ -48,7 +52,7 @@ a,.colortext{
 	width: 200px;
 	height: 200px;
 	position: relative;
-	margin:0 auto 20vh auto;
+	margin:0 auto 60px auto;
 }
 .hero-content .svg svg{
 	position: absolute;
@@ -58,14 +62,14 @@ a,.colortext{
 	height:100%;
 }
 .hero-content h2{
-	font-size: 30px;
+	font-size: 42px;
 	margin-bottom: 4px;
 	color:#88d89d;
 }
 .hero-content p{
-	font-size: 24px;
-	margin:0 0 20px 0;
-	line-height: 28px;
+	font-size: 28px;
+	margin:0 0 32px 0;
+	line-height: 48px;
 }
 .hero-content button{
 	width:160px;
@@ -76,6 +80,7 @@ a,.colortext{
 	border:0;
 	font-size: 16px;
 	cursor: pointer;
+	margin-bottom: 20px;
 }
 .social a{
 	display: inline-block;
@@ -257,6 +262,7 @@ a,.colortext{
 	}
 	.hero-content p{
 		font-size: 18px;
+		line-height: 22px;
 	}
 	.footer .grid2,
 	.section.about .grid2{
@@ -351,7 +357,7 @@ a,.colortext{
 	</div>
 </div>
 <div class="section hero">
-	<div class="bind">
+	<div class="bind smaller">
 		<div class="hero-content">
 			<div class="svg">
 				<svg width="194.1px" height="268.3px" viewBox="0 0 194.1 268.3">
@@ -382,7 +388,7 @@ a,.colortext{
 			<p>Finally, take control of your home information, and save time and money when you do it.</p>
 			<p>Jules is almost ready to roll. Sign up below to pre-register and stay in-the-know about our upcoming Beta release.</p>
 			<button id="trigger-form">Pre-register</button>
-			<p class="colortext">Everyone who pre-registers will receive a special thank you gift from Jules.</p>
+			<p class="colortext" style="font-size: 15px;">Everyone who pre-registers will receive a special thank you gift from Jules.</p>
 		</div>
 	</div>
 </div>
