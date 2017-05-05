@@ -34,7 +34,7 @@ a,.colortext{
 }
 .hero{
 	width:100vw;
-min-height: 100%;
+
 	background-image:url(grey.jpg);
 	background-position: center;
 	background-size: cover;
@@ -132,6 +132,16 @@ min-height: 100%;
 .grid2 .block.right{
 	text-align: right;
 }
+.grid{
+	display: flex;
+	width:100%;
+}
+.grid .block-6{
+	width:75%;
+}
+.grid .block-2{
+	width:25%;
+}
 
 .footer{
 	background-color: #333333;
@@ -150,7 +160,9 @@ min-height: 100%;
 	margin-top: 20px;
 	height:40px;
 }
-
+.non-homeowner{
+	display: none;
+}
 .registration{
 
 
@@ -176,11 +188,10 @@ min-height: 100%;
 	height:100%;
 }
 .registration .form{
-	max-width: 400px;
+	max-width: 700px;
 	border-radius: 20px;
 	display: inline-block;
-	background-color: #e6e6e6;
-	padding: 40px;
+	padding: 20px 40px 40px;
 }
 .registration .form .grid2{
 	padding-bottom: 10px;
@@ -195,6 +206,7 @@ min-height: 100%;
 	width: 40px;
 	height: 60px;
 	position: relative;
+	margin:0;
 }
 .registration .form .svg svg{
 	position: absolute;
@@ -205,8 +217,8 @@ min-height: 100%;
 }
 .registration .form input{
 	width:100%;
-	font-size: 16px;
-	padding:6px 12px;
+	font-size: 18px;
+	padding:10px 20px;
 	border:0;
 	margin-bottom:10px;
 }
@@ -218,7 +230,7 @@ min-height: 100%;
 }
 
 .styled-select {
-	height: 29px;
+	height: 42px;
 	overflow: hidden;
 	width: 100%;
 	background-color: #b3b3b3;
@@ -227,11 +239,23 @@ min-height: 100%;
 .styled-select select {
 	background: transparent;
 	border: none;
-	font-size: 16px;
-	height: 29px;
-	padding:6px 12px;
+	font-size: 18px;
+	padding:10px 20px;
+	height: 42px;
 	width: 100%;
 	color: #fff;
+}
+.form-footer{
+	background-color: white;
+}
+.form-footer p{
+	font-size: 16px;
+	line-height: 22px;
+	color:black;
+	margin:40px;
+}
+.form-footer img{
+	width:100%;
 }
 @media only screen and (max-width : 736px) {
 	.hero{
@@ -294,27 +318,105 @@ min-height: 100%;
 			<div class="registration">
 				<div class="flex">
 					<div class="form" id="homeowner-form">
-						<div class="inputs">
+						<h1>Jules Registration</h1>
+						<div id="form" class="inputs">
 							<div class="styled-select">
 								<select id="subscriber-category">
-						            <option>Homeowner</option>
-						            <option>Real Estate Agent of Broker</option>
-						            <option>Maintenance/Repair Professional</option>
-						            <option>Builder</option>
-						            <option>Inspector</option>
-						            <option>Home Organizer</option>
-						            <option>Insurance Agent/Broker</option>
-						            <option>Home subscription Services Provider</option>
-						            <option>Organization seeking to perform data analytics</option>
-						            <option>Other</option>
+						            <option value="homeowner">Homeowner</option>
+						            <option value="broker">Real Estate Agent of Broker</option>
+						            <option value="maintenance">Maintenance/Repair Professional</option>
+						            <option value="builder">Builder</option>
+						            <option value="inspector">Inspector</option>
+						            <option value="organizer">Home Organizer</option>
+						            <option value="agent">Insurance Agent/Broker</option>
+						            <option value="provider">Home subscription Services Provider</option>
+						            <option value="analytics">Organization seeking to perform data analytics</option>
+						            <option value="other">Other</option>
 					          </select>
 					      	</div>
-							<input type="text" placeholder="First Name" />
-							<input type="text" placeholder="Last Name" />
-							<input type="text" placeholder="Zip Code" />
-							<input type="email" placeholder="Email address" />
-							<input type="phone" placeholder="Phone number" />
-							<input type="submit" value="Register" id="submit" />
+					      	<div class="non-homeowner">
+					            <input type="text" class="text-input" placeholder="Business name" name="businessName">
+					          	<strong>Full business address</strong></label>
+					            <input type="text" class="text-input" placeholder="Street number" name="streetNumber">
+					            <input type="text" class="text-input" placeholder="Street name" name="streetName">
+					            <input type="text" class="text-input" placeholder="City" name="city">
+					            <div class="styled-select">
+									<select id="subscriber-category">
+										<option selected="State">Select State</option>
+										<option>Alabama (AL)</option> 
+										<option>Alaska (AK)</option> 
+										<option>Arizona (AZ)</option> 
+										<option>Arkansas (AR)</option> 
+										<option>California (CA)</option> 
+										<option>Colorado (CO)</option> 
+										<option>Connecticut (CT)</option> 
+										<option>Delaware (DE)</option> 
+										<option>Florida (FL)</option> 
+										<option>Georgia (GA)</option> 
+										<option>Hawaii (HI)</option> 
+										<option>Idaho (ID)</option> 
+										<option>Illinois (IL)</option> 
+										<option>Indiana (IN)</option> 
+										<option>Iowa (IA)</option> 
+										<option>Kansas (KS)</option> 
+										<option>Kentucky (KY)</option> 
+										<option>Louisiana (LA)</option> 
+										<option>Maine (ME)</option> 
+										<option>Maryland (MD)</option> 
+										<option>Massachusetts (MA)</option> 
+										<option>Michigan (MI)</option> 
+										<option>Minnesota (MN)</option> 
+										<option>Mississippi (MS)</option> 
+										<option>Missouri (MO)</option> 
+										<option>Montana (MT)</option> 
+										<option>Nebraska (NE)</option> 
+										<option>Nevada (NV)</option> 
+										<option>New Hampshire (NH)</option> 
+										<option>New Jersey (NJ)</option> 
+										<option>New Mexico (NM)</option> 
+										<option>New York (NY)</option> 
+										<option>North Carolina (NC)</option> 
+										<option>North Dakota (ND)</option> 
+										<option>Ohio (OH)</option> 
+										<option>Oklahoma (OK)</option> 
+										<option>Oregon (OR)</option> 
+										<option>Pennsylvania (PA)</option> 
+										<option>Rhode Island (RI)</option> 
+										<option>South Carolina (SC)</option> 
+										<option>South Dakota (SD)</option> 
+										<option>Tennessee (TN)</option> 
+										<option>Texas (TX)</option> 
+										<option>Utah (UT)</option> 
+										<option>Vermont (VT)</option> 
+										<option>Virginia (VA)</option> 
+										<option>Washington (WA)</option> 
+										<option>West Virginia (WV)</option> 
+										<option>Wisconsin (WI)</option> 
+										<option>Wyoming (WY)</option>            
+						            </select>
+					            </div>
+					            <input type="text" class="text-input" placeholder="Zip code" name="zipCode">
+					        </div>
+
+
+					        <div class="homeowner">
+								<input type="text" placeholder="First Name" />
+								<input type="text" placeholder="Last Name" />
+								<input type="text" placeholder="Zip Code" class="homeowner-zip" />
+								<input type="email" placeholder="Email address" />
+								<input type="phone" placeholder="Phone number" />
+								<input type="submit" value="Register" id="submit" />
+							</div>
+						</div>
+						<div class="form-footer">
+							<div class="grid">
+								<div class="block-6">
+									<p>By pre-registering for Jules, you’ve earned yourself two free signature cocktails at MoMo’s in Walnut Creek. A tasty thank you from us to you.</p>
+								</div>
+								<div class="block-2">
+									<img src="momos.png" />
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -338,4 +440,32 @@ min-height: 100%;
 	</div>
 </div>
 </body>
+<script>
+(function($){
+	$('#subscriber-category').change(function(){
+
+	   selection = $(this).val();
+	   switch(selection)
+	   {
+	       case 'homeowner':
+	           $('.homeowner').show();
+	           $('.non-homeowner').hide();
+	           break;
+	       case 'non-homeowner':
+
+	       		$('.homeowner').show();
+	           	$('.non-homeowner').show();
+	           	$('.homeowner-zip').hide();
+	       		break;
+	       default:
+	       		console.log('default')
+	           $('.homeowner').show();
+	           	$('.non-homeowner').show();
+	           	$('.homeowner-zip').hide();
+	           break;
+	   }
+	});
+
+})(jQuery);
+</script>
 </html>
