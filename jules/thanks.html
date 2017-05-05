@@ -10,7 +10,7 @@
   <meta name="author" content="Jules">
   <meta name="robots" content="index, follow">
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -38,7 +38,6 @@ a,.colortext{
 	background-image:url(grey.jpg);
 	background-position: center;
 	background-size: cover;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-attachment: fixed;
@@ -48,10 +47,10 @@ a,.colortext{
 	color: white;
 }
 .hero-content .svg{
-	width: 200px;
-	height: 200px;
+	width: 120px;
+	height: 120px;
 	position: relative;
-	margin:0 auto 100px auto;
+	margin:0 auto 40px auto;
 }
 .hero-content .svg svg{
 	position: absolute;
@@ -67,7 +66,7 @@ a,.colortext{
 }
 .hero-content p{
 	font-size: 28px;
-	margin:0 0 32px 0;
+	margin:0 0 20px 0;
 	line-height: 48px;
 }
 .hero-content button{
@@ -88,7 +87,7 @@ a,.colortext{
 	box-sizing: border-box;
 }
 .section{
-	padding: 100px 20px;
+	padding: 40px 20px;
 	text-align: center;
 	box-sizing: border-box;
 }
@@ -262,8 +261,8 @@ a,.colortext{
 	width:100%;
 }
 .largep{
-	font-size: 40px !important;
-	line-height: 48px !important;
+	font-size:48px !important;
+	font-weight: 400 !important;
 }
 .smallp{
 	font-size: 20px !important;
@@ -271,7 +270,7 @@ a,.colortext{
 }
 @media only screen and (max-width : 736px) {
 	.hero{
-		height: 90vh;
+		min-height: 90vh;
 	}
 	.hero-content .svg{
 		margin:0 auto 80px auto;
@@ -327,17 +326,15 @@ a,.colortext{
 					</g>
 				</svg>
 			</div>
-			<h1>Jules Registration</h1>
-			<div class="grid">
-				<div class="block" style="text-align: left; padding:0 40px 0 0;flex:1.5;">
+			
+				<div class="block" style="text-align: left; padding:0 40px 0 0;flex:1.5;text-align: center;">
 					<p class="largep">Brian, Thanks for pre-registering.</p>
-					<p class="smallp">Please check your email for confirmation and to redeem your free drinks at MoMo’s.</p>
-					<p class="smallp">Stay tuned for more exciting details as we get closer to our Beta launch</p>
+					<p class="smallp">Please check your email for confirmation and to redeem your free drinks at MoMo’s.Stay tuned for more exciting details as we get closer to our Beta launch</p>
 				</div>
-				<div class="block">
-					<img src="coupon.jpg" />
+				<div class="block" style="padding-top:40px;">
+					<img src="coupon.jpg" style="width:350px;" />
 				</div>
-			</div>
+			
 			
 		</div>
 	</div>
@@ -345,11 +342,13 @@ a,.colortext{
 <div class="footer">
 	<div class="grid2">
 		<div class="block">
+		<!--
 			<div class="social">
 				<a href="#"><i class="fa fa-facebook"></i></a>
 				<a href="#"><i class="fa fa-twitter"></i></a>
 				<a href="#"><i class="fa fa-linkedin"></i></a>
 			</div>
+			-->
 			<p>&reg; Jules and HomeIQ, Inc.  2017</p>
 		</div>
 		<div class="block right">

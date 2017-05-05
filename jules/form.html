@@ -10,7 +10,7 @@
   <meta name="author" content="Jules">
   <meta name="robots" content="index, follow">
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -51,7 +51,7 @@ a,.colortext{
 	width: 200px;
 	height: 200px;
 	position: relative;
-	margin:0 auto 100px auto;
+	margin:0 auto 50px auto;
 }
 .hero-content .svg svg{
 	position: absolute;
@@ -163,8 +163,9 @@ a,.colortext{
 .non-homeowner{
 	display: none;
 }
-.registration{
-
+.registration h1{
+	font-size:48px !important;
+	font-weight: 400 !important;
 
 }
 .registration .flex{
@@ -259,7 +260,7 @@ a,.colortext{
 }
 @media only screen and (max-width : 736px) {
 	.hero{
-		height: 90vh;
+		min-height: 90vh;
 	}
 	.hero-content .svg{
 		margin:0 auto 80px auto;
@@ -427,11 +428,13 @@ a,.colortext{
 <div class="footer">
 	<div class="grid2">
 		<div class="block">
+		<!--
 			<div class="social">
 				<a href="#"><i class="fa fa-facebook"></i></a>
 				<a href="#"><i class="fa fa-twitter"></i></a>
 				<a href="#"><i class="fa fa-linkedin"></i></a>
 			</div>
+			-->
 			<p>&reg; Jules and HomeIQ, Inc.  2017</p>
 		</div>
 		<div class="block right">
