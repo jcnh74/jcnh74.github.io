@@ -260,14 +260,25 @@ a,.colortext{
 }
 @media only screen and (max-width : 736px) {
 	.hero{
-		min-height: 90vh;
+		min-height: 100vh;
+		height: auto;
+	}
+	.section{
+		padding: 20px 20px;
 	}
 	.hero-content .svg{
-		margin:0 auto 80px auto;
+		width: 100px;
+		height: 100px;
+		margin:0 auto 0px auto;
+	}
+	.section h3,
+	.section.color h3
+	.hero-content h2{
+		font-size:28px !important;
 	}
 	.hero-content p{
-		font-size: 18px;
-		line-height: 22px;
+		font-size: 16px;
+		line-height: 20px;
 	}
 	.footer .grid2,
 	.section.about .grid2{
@@ -284,7 +295,18 @@ a,.colortext{
 	.registration .form{
 		padding: 20px;
 	}
+	.form-footer{
+		padding:20px;
+	}
+	.form-footer .grid{
+		display: block;
+	}
+	.form-footer .grid .block-2,
+	.form-footer .grid .block-6{
+		width:100%;
+	}
 }
+
 </style>
 </head>
 <body>

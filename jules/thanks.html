@@ -268,16 +268,36 @@ a,.colortext{
 	font-size: 20px !important;
 	line-height: 26px !important;
 }
+.block-left{
+	text-align: left; padding:0 40px 0 0;flex:1.5;text-align: center;
+}
+.block-right{
+	padding-top:40px;
+}
+.block-right img{
+	max-width:350px;
+}
 @media only screen and (max-width : 736px) {
 	.hero{
-		min-height: 90vh;
+		min-height: 100vh;
+		height: auto;
+	}
+	.section{
+		padding: 20px 20px;
 	}
 	.hero-content .svg{
-		margin:0 auto 80px auto;
+		width: 100px;
+		height: 100px;
+		margin:0 auto 20px auto;
+	}
+	.section h3,
+	.section.color h3
+	.hero-content h2{
+		font-size:28px !important;
 	}
 	.hero-content p{
-		font-size: 18px;
-		line-height: 22px;
+		font-size: 16px;
+		line-height: 30px;
 	}
 	.footer .grid2,
 	.section.about .grid2{
@@ -294,6 +314,24 @@ a,.colortext{
 	.registration .form{
 		padding: 20px;
 	}
+.largep{
+	font-size:28px !important;
+	line-height: 30px;
+	font-weight: 400 !important;
+}
+.smallp{
+	font-size: 16px !important;
+	line-height: 26px !important;
+}
+.block img{
+	width:100%;
+}
+.block-left{
+	text-align: left; padding:20px;flex:1.5;text-align: center;
+}
+.block-right{
+	padding-top:40px;
+}
 }
 </style>
 </head>
@@ -328,13 +366,13 @@ a,.colortext{
 				</svg>
 			</div>
 			</a>
-				<div class="block" style="text-align: left; padding:0 40px 0 0;flex:1.5;text-align: center;">
+				<div class="block block-left" style="">
 					<p class="largep">Brian, Thanks for pre-registering.</p>
 					<p class="smallp">Please check your email for confirmation and to redeem your free drinks at MoMo’s. Stay tuned for more exciting details as we get closer to our Beta launch. Please check your spam folder if you don't immediately recieve the confirmation email.</p>
 					<p class="smallp"><a href="index.html" style="text-decoration:none;">&larr; return to home</a></p>
 				</div>
-				<div class="block" style="padding-top:40px;">
-					<img src="coupon.jpg" style="width:350px;" />
+				<div class="block block-right" style="">
+					<img src="coupon.jpg" style="" />
 				</div>
 			
 			

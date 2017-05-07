@@ -62,8 +62,8 @@ a,.colortext{
 	height:100%;
 }
 .hero-content h2{
-	font-size:48px !important;
-	font-weight: 400 !important;
+	font-size:48px;
+	font-weight: 400;
 	margin-bottom: 4px;
 	color:#88d89d;
 }
@@ -105,14 +105,14 @@ a,.colortext{
 }
 .section h3{
 	margin-top:0;
-	font-size:48px !important;
-	font-weight: 400 !important;
+	font-size:48px;
+	font-weight: 400;
 	color:#88d89d;
 }
 .section.color h3{
 	color:white;
-		font-size:48px !important;
-	font-weight: 400 !important;
+		font-size:48px;
+	font-weight: 400;
 }
 .section .title{
 	font-weight: 700;
@@ -264,14 +264,25 @@ a,.colortext{
 }
 @media only screen and (max-width : 736px) {
 	.hero{
-		min-height: 90vh;
+		min-height: 100vh;
+		height: auto;
+	}
+	.section{
+		padding: 20px 20px;
 	}
 	.hero-content .svg{
-		margin:0 auto 80px auto;
+		width: 100px;
+		height: 100px;
+		margin:0 auto 0px auto;
+	}
+	.section h3,
+	.section.color h3
+	.hero-content h2{
+		font-size:28px !important;
 	}
 	.hero-content p{
-		font-size: 18px;
-		line-height: 22px;
+		font-size: 16px;
+		line-height: 20px;
 	}
 	.footer .grid2,
 	.section.about .grid2{
