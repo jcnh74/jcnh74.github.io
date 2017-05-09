@@ -17,7 +17,7 @@ body{
 .header{
 	background:rgba(0,0,0,0.6);
 	padding:8px 12px;
-	position: absolute;
+	position: fixed;
 	top:0;
 	left:0;
 	right:0;
@@ -93,10 +93,39 @@ a:nth-child(4):hover{
 	margin:0 4px;
 }
 .gif{
-	min-height: 100%;
+
 	width:100%;
 	background-position: center center;
 	background-size: cover;
+	background-attachment: fixed;
+}
+.work{
+	min-height: 100vh;
+	box-sizing: border-box;
+	padding: 80px 0;
+	overflow-y: scroll;
+	
+}
+.work p{
+	
+	margin:0 20px;
+	padding: 4px;
+
+	-webkit-transition: all 0.3s;
+	-moz-transition:  all 0.3s;
+	-o-transition:  all 0.3s;
+	transition: all 0.3s;
+
+	opacity: 0;
+	margin-left:-10px;
+
+}
+.work p a{
+	background-color: rgba(0,0,0,0.8);
+}
+.work p.head{
+	font-size: 22px;
+	background-color: rgba(0,0,0,0.5);
 }
 
 
@@ -123,7 +152,50 @@ a:nth-child(4):hover{
 
 		<div class="gif">
 			<h3><a href="http://gmixr.com" target="_blank" class="">gmixr.com</a></h3>
-			<h4></h4>
+			<div class="work">
+				<p class="head">Web</p>
+				<p><a href="http://alloypd.com/" target="_blank">alloypd.com</a></p>
+				<p><a href="http://beautyandpinups.com/" target="_blank">beautyandpinups.com</a></p>
+				<p><a href="https://www.bebop.co/" target="_blank">bebop.co</a></p>
+				<p><a href="http://bioniclandscape.com/" target="_blank">bioniclandscape.com</a></p>
+				<p><a href="http://blacklabeladvisory.com/" target="_blank">blacklabeladvisory.com</a></p>
+				<p><a href="http://bora.co/" target="_blank">bora.co</a></p>
+				<p><a href="http://www.climbsf.com/"" target="_blank">climbsf.com</a></p>
+				<p><a href="https://darkcubed.com/" target="_blank">darkcubed.com</a></p>
+				<p><a href="https://elevarco.com" target="_blank">elevarco.com</a></p>
+				<p><a href="http://formationgroup.com/" target="_blank">formationgroup.com</a></p>
+				<p><a href="http://fortalicesolutions.com/" target="_blank">fortalicesolutions.com</a></p>
+				<p><a href="https://fortmason.org/" target="_blank">fortmason.org</a></p>
+				<p><a href="https://gamechangers.davidson.edu/" target="_blank">davidson.edu</a></p>
+				<p><a href="http://giantsenterprises.com/" target="_blank">giantsenterprises.com</a></p>
+				<p><a href="http://hollywoodholler.com/" target="_blank">hollywoodholler.com</a></p>
+				<p><a href="https://www.publicarchitecture.org/" target="_blank">publicarchitecture.org</a></p>
+				<p><a href="https://theoneplus.org/" target="_blank">theoneplus.org</a></p>
+				<p class="head">Apps</p>
+				<p><a href="https://itunes.apple.com/us/app/gmixr/id1217135612?mt=8" target="_blank">Gmixr</a></p>
+				<p><a href="https://vimeo.com/120438858" target="_blank">Ekko</a></p>
+				<p><a href="http://kiosk.ccto.dnsalias.com/#idle" target="_blank">Stanford Clinical Trials</a></p>
+				<p><a href="https://darkcubed.com/" target="_blank">Dark<sup>3</sup></a></p>
+				<p><a href="https://itunes.apple.com/us/app/vobok/id580458570?mt=8" target="_blank">Vobok</a></p>
+				<p class="head">Motion</p>
+				<p><a href="https://www.youtube.com/watch?v=0Qax3vv2eQQ" target="_blank">CEDIA</a></p>
+				<p><a href="https://vimeo.com/27026767" target="_blank">Globe</a></p>
+				<p><a href="https://vimeo.com/27025365" target="_blank">Earth and Light</a></p>
+				<p><a href="https://vimeo.com/23407894" target="_blank">Frog</a></p>
+				<p><a href="https://vimeo.com/27027550" target="_blank">Break Apart</a></p>
+				<p><a href="https://vimeo.com/18464564" target="_blank">Hanusek</a></p>
+				<p><a href="https://vimeo.com/15660636" target="_blank">tRNA Unwrap</a></p>
+				<p><a href="https://vimeo.com/13533619" target="_blank">CMYK</a></p>
+				<p><a href="https://vimeo.com/12643756" target="_blank">Alternate Universe</a></p>
+				<p><a href="https://vimeo.com/12583011" target="_blank">Tron</a></p>
+				<p class="head">Short Films</p>
+				<p><a href="https://vimeo.com/30634534" target="_blank">The Spritsail</a></p>
+				<p><a href="https://vimeo.com/59203942" target="_blank">North Shore</a></p>	
+				<p><a href="https://www.youtube.com/watch?v=tHuwytUDQEE" target="_blank">Asbury Pool</a></p>
+				<p><a href="https://www.youtube.com/watch?v=GSPVpT0Pg5I" target="_blank">Bali Surf (1mil+ Views)</a></p>
+				<p><a href="https://www.youtube.com/watch?v=QSNY7XxQ470" target="_blank">FDR Skatepark</a></p>
+				<p><a href="https://www.youtube.com/watch?v=D6MFRtr9LSY" target="_blank">GLand Indo</a></p>
+			</div>
 		</div>
 
 
@@ -158,7 +230,20 @@ window.addEventListener("load",function() {
 	    $('.gif h4').html('<a href="https://www.tumblr.com/search/'+search+'" target="_blank">'+search+'</a>');
 		$('.gif').css("background-image", "url('"+rand[0].images.original.url+"')");
 
+		$('.work p').each(function(index){
+			$(this).delay(50*index).queue(function(next){
+				$(this).css({
+					marginLeft:'20px',
+					opacity:1,
+				});
+				next();
+			});
+		 });
+
 	});
+
+
+
 
 })(jQuery)
 </script>
