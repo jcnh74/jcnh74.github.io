@@ -31,7 +31,7 @@
 		width:100%;
 		display: flex;
 		flex-direction: column;
-		transition: top 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000), bottom 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+		transition: top 2.7s cubic-bezier(0.165, 0.840, 0.440, 1.000), bottom 2.7s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	}
 	.row:nth-child(odd) .block:nth-child(odd) .slideCol{
 		top:0;
@@ -180,16 +180,21 @@
 
 			$('.row:nth-child('+cycleArr[i][0]+')').each(function(){
 				//console.log(cycleArr[i][0], cycleArr[i][1]);
-				var move = {
-						top: -size
-					};
-				if(i > 1){
-					move = {
-						bottom: -size
-					};
-				}
+				var move = (i > 1) ? { bottom: -size } : { top: -size };
+
 				$(this).find('.block:nth-child('+cycleArr[i][1]+')').each(function(index, element){
 					$(this).find('.slideCol').css(move);
+					// for(var j = 0; j < cols.length; j++){
+
+					// 	console.log( $(cols[j])[0] );
+						
+					// 	$(cols[j]).delay(500*j).queue(function(next){
+					// 		$(cols[j]).css(move);
+							
+					// 		next();
+					// 	});
+					// }
+					
 				});
 			});
 		}
