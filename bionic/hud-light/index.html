@@ -1,0 +1,446 @@
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../jquery.fullPage.css" rel="stylesheet">
+  <script src="../jquery.fullPage.min.js"></script>
+</head>
+
+<style>
+body{
+  margin: 0;
+  padding: 0;
+}
+.base{
+  width:100vw;
+  height:100vh;
+  position: relative;
+  z-index: 1;
+}
+#pageLayer{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+#fullPage .section{
+  background-position: center;
+  background-size: cover;
+}
+.layer1{
+  width:100vw;
+  height:100vh;
+  box-sizing: border-box;
+
+  border-top:20px solid rgb(153,153,153);
+  border-left:20px solid rgb(153,153,153);
+  border-right:20px solid rgb(153,153,153);
+
+  animation-name: encroach;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  mix-blend-mode: multiply;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+}
+.white .layer1{
+  border-top:20px solid white;
+  border-left:20px solid white;
+  border-right:20px solid white;
+  mix-blend-mode: normal;
+}
+.layer2{
+  position: absolute;
+  top:20px;left:20px;right:20px;bottom:20px;
+  box-sizing: border-box;
+}
+
+/* GRID GRID GRID */
+#grid{
+	position: absolute;
+	top:20px;
+	left:20px;
+	right:20px;
+	bottom:20px;
+  z-index: 2;
+}
+.ch{
+  box-sizing: border-box;
+	width:10%;
+	height:10%;
+	float:left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+}
+.ch .wipe{
+  position: absolute;
+  top:0;
+  left:0;
+  right:100%;
+  bottom:0;
+  opacity:1;
+  border:0px solid rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.6);
+  transition: opacity 0.2s, right 0.2s;
+}
+.white .ch .wipe{
+  background-color: #FFF;
+}
+.ch.dissolve .wipe{
+  opacity:1;
+  right:0;
+}
+.ch:hover{
+	animation-name: blink;
+  animation-duration: 0.2s;
+  background-color: rgba(0,0,0,0.6);
+}
+.box{
+	width:100%;
+	width:100%;
+}
+.ch svg{
+	position: absolute;
+	width:8px;
+	height:8px;
+	opacity: 1;
+}
+.ch svg.topleft{
+	top:-4px;
+	left:-4px;
+}
+.ch svg.bottomright{
+	bottom:-4px;
+	right:-4px;
+}
+.panel{
+	display: none;
+	position: absolute;
+	animation-name: blink;
+  animation-duration: 0.2s;
+	transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s;
+	background-color: rgba(0,0,0,0.6);
+}
+.panel.open{
+	display: block;
+}
+/* GRID GRID GRID */
+
+.flip .slice-bg{
+  background-image:url(../ui-slice-flip.svg);
+}
+.slice{
+  position: absolute;
+  top:0px;
+}
+.slice.left{
+  left: 0;
+}
+.slice.bottom{
+  top:auto;
+  bottom: 0;
+}
+.slice.right{
+  right: 0;
+}
+.slice.left .slice-bg{
+  background-position: right top;
+  left:0;
+}
+.slice.right .slice-bg{
+  background-position: right left;
+  right:0;
+}
+.slice.large{
+  width:1280px;
+  height:100px;
+}
+.slice.crazy{
+  width:4880px;
+  height:400px;
+}
+
+.slice.small{
+  height:50px;
+}
+
+.slice.large .slice-bg{
+  height:100px;
+  background-size: 1280px 100px;
+}
+.slice.crazy .slice-bg{
+  height:400px;
+  background-size: 4880px 400px;
+}
+.crazy .slice-bg{
+  animation-name: crazySlide;
+}
+.long .slice-bg{
+  animation-name: longSlide;
+}
+.mid .slice-bg{
+  animation-name: midSlide;
+}
+.slice.small .slice-bg{
+  height:50px;
+  background-size: 640px 50px;
+
+}
+.slice.small.bottom .slice-bg{
+  height:50px;
+  background-size: 640px 50px;
+}
+.corner .slice-bg{
+    animation-name: cornerSlide;
+}
+
+
+.slice-bg{
+  position: absolute;
+
+  background-image:url(../ui-slice.svg);
+  mix-blend-mode: multiply;
+  position: absolute;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+.white .slice-bg{
+  mix-blend-mode: normal;
+  background-image:url(../ui-slice-white.svg);
+}
+.white .flip .slice-bg{
+  mix-blend-mode: normal;
+  background-image:url(../ui-slice-flip-white.svg);
+}
+
+
+
+.logo{
+  position: absolute;
+  top:0;left:0;
+  display: block;
+}
+.logo .dark{
+  display: none;
+}
+.white .logo .dark{
+  display: block;
+}
+.logo .light{
+  display: block;
+}
+.logo img{
+  position: absolute;
+  top:30px;
+  left:40px;
+  height:62px;
+  animation-name: fadeleft;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  z-index: 999;
+}
+@keyframes longSlide {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 660px;
+    }
+}
+@keyframes crazySlide {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 80vw;
+    }
+}
+@keyframes midSlide {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 220px;
+    }
+}
+@keyframes cornerSlide {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 35px;
+  }
+}
+@keyframes fadeleft {
+    from {
+      opacity: 0;
+      left:-100px;
+    }
+    to {
+      opacity: 1;
+      left:140px;
+    }
+}
+@keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+@keyframes encroach {
+    from {
+      border-width: 0;
+    }
+    to {
+      border-width: 20px;
+    }
+}
+@keyframes expand {
+    from {
+      width: 40px;
+      opacity: 0;
+    }
+    to {
+      width: 120px;
+      opacity: 1;
+    }
+}
+.st1{fill:none;stroke:#FFFFFF;stroke-miterlimit:20;}
+.social{
+  position: absolute;
+  top:20px;
+  right:20px;
+  z-index: 99;
+}
+.social{
+  display: flex;
+  justify-content: space-between;
+  width:120px;
+  animation-name: expand;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  margin:5px 40px 0 0;
+}
+.social a{
+  display: inline-block;
+  width:24px;
+  height:24px;
+  border-radius: 50%;
+  padding:4px;
+  box-sizing: border-box;
+  color:rgb(120,120,120);
+  background-color: white;
+}
+</style>
+<body class="white">
+<div class="base">
+  <div id="pageLayer">
+    <div id="fullpage">
+    	<div class="section" style="background-image: url(../cool.jpg);"></div>
+    	<div class="section" style="background-image: url(http://bioniclandscape.com/assets/image-04.jpg);"></div>
+      <div class="section" style="background-image: url(http://bioniclandscape.com/assets/image-01.jpg);"></div>
+      <div class="section" style="background-image: url(http://bioniclandscape.com/assets/image-02.jpg);"></div>
+    </div>
+  </div>
+  <div id="grid">
+  		<div class="panel"></div>
+  </div>
+  <div class="layer1">
+    <div class="slice large left long" style="top:0;"><div class="slice-bg"></div></div>
+    <div class="slice small left corner" style="top:100px;"><div class="slice-bg"></div></div>
+    <div class="slice small right mid" style="top:0;"><div class="slice-bg"></div></div>
+    <div class="slice small right corner" style="top:50px;"><div class="slice-bg"></div></div>
+    <div class="slice left bottom crazy" style="bottom:-370px;"><div class="slice-bg"></div></div>
+    <div class="slice small right bottom flip corner" style="bottom:0;"><div class="slice-bg"></div></div>
+    <div class="slice small left bottom flip corner" style="bottom:20px;"><div class="slice-bg"></div></div>
+  </div>
+  <div class="logo">
+    <img class="light" src="../logo.svg" />
+    <img class="dark" src="../logo-dark.svg" />
+  </div>
+  <div class="social">
+    <a href=""><i class="fa fa-facebook"></i></a>
+    <a href=""><i class="fa fa-twitter"></i></a>
+    <a href=""><i class="fa fa-linkedin"></i></a>
+  </div>
+</div>
+
+
+<script>
+(function($){
+  $(document).ready(function() {
+	   $('#fullpage').fullpage({
+       onLeave: function( index, nextIndex, direction){
+         $('.ch').each(function(index, element){
+           $(this).addClass('cool').delay(index*5).queue(function(next){
+             $(this).addClass("dissolve");
+             next();
+           });
+         });
+      },
+        afterLoad: function( index, nextIndex, direction){
+          $('.ch').each(function(index, element){
+            $(this).removeClass('cool').delay(index*5).queue(function(next){
+              $(this).removeClass("dissolve");
+              next();
+            });
+          });
+        	}
+     });
+  });
+  // $('body').append('<div class="base" />');
+  // $('body').append('<div class="logo"><div class="logo-bg"></div><img src="logo.svg" /></div>');
+  // $('.base').append('<div class="layer1" />');
+  // $('body').append('<div class="layer2" />');
+  for (var i = 0; i < 100; i++) {
+  	    	$('#grid').append('<div class="ch"><div class="wipe"></div><svg class="topleft" viewBox="0 0 16.8 16.8"><g><g><line class="st1" x1="8.4" y1="0" x2="8.4" y2="16.8"/></g><g><line class="st1" x1="0" y1="8.4" x2="16.8" y2="8.4"/></g></g></svg><svg class="bottomright" viewBox="0 0 16.8 16.8"><g><g><line class="st1" x1="8.4" y1="0" x2="8.4" y2="16.8"/></g><g><line class="st1" x1="0" y1="8.4" x2="16.8" y2="8.4"/></g></g></svg></div>');
+  	    }
+  	    var num = 20;
+  	    $('.ch').each(function(index, element){
+
+  	    	setTimeout( function(){
+  	    		$(element).css({
+  	    			opacity:1
+  	    		});
+  	    		$(element).find('svg').css({
+  	    			marginTop:0
+  	    		});
+
+  	    	}, 10 * index);
+
+  	    	$(this).hover(
+  	    		function(){
+  	    			var pos = $(this).position();
+  	    			$('.panel').css({
+  	    				top: pos.top,
+  	    				left: pos.left,
+  	    				width: $(this).width(),
+  	    				height: $(this).height(),
+  	    				zIndex: -1
+  	    			});
+  	    		},
+  	    		function(){
+
+  	    		}
+  	    	);
+
+  	    });
+
+})(jQuery)
+</script>
+</body>
+</html>
