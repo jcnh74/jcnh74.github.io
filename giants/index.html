@@ -34,17 +34,11 @@ Sizes: [
         ]
     }
   -->
-
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
-    <title>Respmail is a response HTML email designed to work on all major email platforms and smartphones</title>
-    <style type="text/css">
-      /* RESET STYLES */
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta content="telephone=no" name="format-detection" /><!-- disable auto telephone linking in iOS -->
+<title></title>
+<style type="text/css">/* RESET STYLES */
       html { background-color:#E1E1E1; margin:0; padding:0; }
       body, #bodyTable, #bodyCell, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;}
       table{border-collapse:collapse;}
@@ -171,8 +165,8 @@ Sizes: [
 
       }
       /* end IOS targeting */
-    </style>
-    <!--
+</style>
+<!--
       Outlook Conditional CSS
 
       These two style blocks target Outlook 2007 & 2010 specifically, forcing
@@ -181,22 +175,15 @@ Sizes: [
 
       More information here:
       http://templates.mailchimp.com/development/css/outlook-conditional-css
-    -->
-    <!--[if mso 12]>
+    --><!--[if mso 12]>
       <style type="text/css">
         .flexibleContainer{display:block !important; width:100% !important;}
       </style>
-    <![endif]-->
-    <!--[if mso 14]>
+    <![endif]--><!--[if mso 14]>
       <style type="text/css">
         .flexibleContainer{display:block !important; width:100% !important;}
       </style>
-    <![endif]-->
-  </head>
-  <body bgcolor="#E1E1E1" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
-
-    <!-- CENTER THE EMAIL // -->
-    <!--
+    <![endif]--><!-- CENTER THE EMAIL // --><!--
     1.  The center tag should normally put all the
       content in the middle of the email page.
       I added "table-layout: fixed;" style to force
@@ -206,35 +193,30 @@ Sizes: [
       the email starts from this center, so we try to
       apply necessary styling e.g. background-color.
     -->
-    <center style="background-color:#E1E1E1;">
-      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;">
-        <tr>
-          <td align="center" valign="top" id="bodyCell">
-
-            <!-- EMAIL HEADER // -->
-            <!--
+<center style="background-color: rgb(225, 225, 225);">
+<table border="0" cellpadding="0" cellspacing="0" height="100%" id="bodyTable" style="width: 100% !important; table-layout: fixed; min-width: 100% !important; max-width: 100% !important;" width="100%">
+  <tbody>
+    <tr>
+      <td align="center" id="bodyCell" valign="top"><!-- EMAIL HEADER // --><!--
               The table "emailBody" is the email's container.
               Its width can be set to 100% for a color band
               that spans the width of the page.
             -->
-            <table bgcolor="#E1E1E1" border="0" cellpadding="0" cellspacing="0" width="500" id="emailHeader">
-
-              <!-- HEADER ROW // -->
-              <tr>
-                <td align="center" valign="top">
-                  <!-- CENTERING TABLE // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
-                      <td align="center" valign="top">
-                        <!-- FLEXIBLE CONTAINER // -->
-                        <table border="0" cellpadding="10" cellspacing="0" width="500" class="flexibleContainer">
-                          <tr>
-                            <td valign="top" width="500" class="flexibleContainerCell">
-
-                              <!-- CONTENT TABLE // -->
-                              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                                  <!--
+      <table bgcolor="#e1e1e1" border="0" cellpadding="0" cellspacing="0" id="emailHeader" width="500"><!-- HEADER ROW // -->
+        <tbody>
+          <tr>
+            <td align="center" valign="top"><!-- CENTERING TABLE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+                  <table border="0" cellpadding="10" cellspacing="0" class="flexibleContainer" width="500">
+                    <tbody>
+                      <tr>
+                        <td class="flexibleContainerCell" valign="top" width="500"><!-- CONTENT TABLE // -->
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr><!--
                                     The "invisibleIntroduction" is the text used for short preview
                                     of the email before the user opens it (50 characters max). Sometimes,
                                     you do not want to show this message depending on your design but this
@@ -244,429 +226,467 @@ Sizes: [
                                     center and apply to the width 100% and also shrink to 50% if the first <td>
                                     is visible.
                                   -->
-                                  <td align="left" valign="middle" id="invisibleIntroduction" class="flexibleContainerBox" style="display:none !important; mso-hide:all;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
-                                      <tr>
-                                        <td align="left" class="textContent">
-                                          <div style="font-size:13px;color:#828282;text-align:center;line-height:120%;">
-                                            The introduction of your message preview goes here. Try to make it short.
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                  <td align="right" valign="middle" class="flexibleContainerBox">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
-                                      <tr>
-                                        <td align="left" class="textContent">
-                                          <!-- CONTENT // -->
-                                          <div style="font-size:13px;color:#828282;text-align:center;line-height:120%;">
-                                            If you can't see this message, <a href="#" target="_blank" style="text-decoration:none;border-bottom:1px solid #828282;color:#828282;"><span style="color:#828282;">view&nbsp;it&nbsp;in&nbsp;your&nbsp;browser</span></a>.
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                </tr>
+                              <td align="center" class="flexibleContainerBox" id="invisibleIntroduction" style="display: none !important; mso-hide: all;" valign="middle">
+                              <table border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" class="textContent">
+                                    <div style="text-align: center; color: rgb(130, 130, 130); line-height: 120%; font-size: 13px;">&nbsp;</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
                               </table>
-                            </td>
-                          </tr>
+                              </td>
+                              <td align="center" class="flexibleContainerBox" valign="middle">
+                              <table border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" class="textContent"><!-- CONTENT // -->
+                                    <div style="text-align: center; color: rgb(130, 130, 130); line-height: 120%; font-size: 13px;">&nbsp;</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </td>
+                            </tr>
+                          </tbody>
                         </table>
-                        <!-- // FLEXIBLE CONTAINER -->
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
-                  <!-- // CENTERING TABLE -->
-                </td>
-              </tr>
-              <!-- // END -->
-
+                  <!-- // FLEXIBLE CONTAINER --></td>
+                </tr>
+              </tbody>
             </table>
-            <!-- // END -->
-
-            <!-- EMAIL BODY // -->
-            <!--
+            <!-- // CENTERING TABLE --></td>
+          </tr>
+          <!-- // END -->
+        </tbody>
+      </table>
+      <!-- // END --><!-- EMAIL BODY // --><!--
               The table "emailBody" is the email's container.
               Its width can be set to 100% for a color band
               that spans the width of the page.
             -->
-            <table bgcolor="#FFFFFF"  border="0" cellpadding="0" cellspacing="0" width="500" id="emailBody">
 
-              <!-- MODULE ROW // -->
-              <!--
+      <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" id="emailBody" width="500"><!-- MODULE ROW // --><!--
                 To move or duplicate any of the design patterns
                 in this email, simply move or copy the entire
                 MODULE ROW section for each content block.
               -->
-              <tr>
-                <td align="center" valign="top">
-                  <img src="header.jpg" />
-                </td>
-              </tr>
-
-              <tr>
-                <td align="center" valign="top" width="66.6666666%">
-                  <img src="group.jpg" width="100%" />
-                </td>
-              </tr>
-
-
- <!-- MODULE ROW // -->
-              <!--  The "mc:hideable" is a feature for MailChimp which allows
+        <tbody>
+          <tr>
+            <td align="center" valign="top"><img height="166" src="/northstar/UserFiles//Image/GothamClub-NewsletterHeader-2.jpg" width="500" /></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" width="66.66%"><a href="/northstar/UserFiles//Image/Fireworks-Cruise-500x350.jpg"><img height="350" src="/northstar/UserFiles//Image/DC 500x350.jpg" width="500" /></a></td>
+          </tr>
+          <!-- MODULE ROW // --><!--  The "mc:hideable" is a feature for MailChimp which allows
                 you to disable certain row. It works perfectly for our row structure.
                 http://kb.mailchimp.com/article/template-language-creating-editable-content-areas/
-              -->
-             
-              <!-- MODULE ROW // -->
-              <tr>
-                <td align="center" valign="top">
-                  <!-- CENTERING TABLE // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
-                      <td align="center" valign="top">
-                        <!-- FLEXIBLE CONTAINER // -->
-                        <table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-                          <tr>
-                            <td align="center" valign="top" width="500" class="flexibleContainerCell">
-                              
-                              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-                                <tr>
-                                  <td align="center" valign="top">
+              --><!-- MODULE ROW // -->
+          <tr>
+            <td align="center" valign="top"><!-- CENTERING TABLE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="500">
+                    <tbody>
+                      <tr>
+                        <td align="center" class="flexibleContainerCell" valign="top" width="500">
+                        <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed;" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="center" valign="top"><!-- CONTENT TABLE // -->
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td class="textContent" style="padding: 30px;" valign="top">
+                                    <h3 style="text-align: center; color: rgb(95, 95, 95); line-height: 125%; font-size: 20px; font-weight: normal; margin-top: 0px; margin-bottom: 3px;">Join Gotham on the road in our nation&#39;s capital!</h3>
 
-                                    <!-- CONTENT TABLE // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                      <tr>
-                                        <td valign="top" class="textContent" style="padding-top:30px; padding-right:30px; padding-bottom:30px; padding-left:30px;">
-                                          <h3 style="color:#5F5F5F;line-height:125%;font-size:20px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:left;">Dear $MemeberName,</h3>
-                                          <div style="text-align:left;font-size:15px;margin-bottom:0;margin-top:3px;color:#5F5F5F;line-height:135%;">There’s no better way to celebrate Opening Day than with The Gotham Club! Huge thanks to our friends a Local Brewing Co., Danville Brewing Co., The Good Life Wine Collective, Jax Vineyards, and Pacific Wine & Spirits/Diageo for keeping the party going in Landers, Landing! Here’s to 2017!</div>
-                                        </td>
-                                      </tr>
+                                    <div style="text-align: center; color: rgb(95, 95, 95); line-height: 135%; font-size: 15px; margin-top: 3px; margin-bottom: 0px;">Our road trip offers elegant accommodations at the <em>Crown Jewel of Pennsylvania Avenue</em>, The Willard, easy walking distance from the National Mall. Enjoy all the luxuries of a progress driven city,&nbsp;while immersing yourself in the history of our nation.&nbsp;Plus, we&rsquo;ll be cheering on the Giants at Nationals Park as they take on our rivals to the East, the Nats!
+
+                                    <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 10px;" width="100%">
+                                      <tbody>
+                                        <tr>
+                                          <td>
+                                          <table align="center" border="0" cellpadding="0" cellspacing="0" width="160">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center" bgcolor="#cf4520" style="padding: 12px 18px; border-radius: 6px; -webkit-border-radius: 6px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events" style="color: rgb(255, 255, 255); font-size: 16px; font-weight: normal; text-decoration: none; display: inline-block;" target="_blank">More Info</a></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
                                     </table>
-                                    <!-- // CONTENT TABLE -->
-                                  </td>
-                                </tr>
+                                    </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
                               </table>
-                            </td>
-                          </tr>
+                              <!-- // CONTENT TABLE --></td>
+                            </tr>
+                          </tbody>
                         </table>
-                        <!-- // FLEXIBLE CONTAINER -->
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
-                  <!-- // CENTERING TABLE -->
-                </td>
-              </tr>
-              <!-- // MODULE ROW -->
+                  <!-- // FLEXIBLE CONTAINER --></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- // CENTERING TABLE --></td>
+          </tr>
+          <!-- // MODULE ROW -->
+          <tr>
+            <td>
+            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="color: rgb(255, 255, 255);" width="100%">
+              <tbody>
+                <tr>
+                  <td align="center" class="textContent" style="padding: 4px;" valign="top">
+                  <h1 style="padding: 15px 0px 0px; text-align: center; color: rgb(0, 0, 0); line-height: 100%; font-size: 22px; font-weight: normal; margin-bottom: 5px;"><b>Upcoming Events</b></h1>
 
-              <tr>
-                <td>
-                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#ffffff">
-                    <tr>
-                      <td align="center" valign="top" class="textContent" style="padding-top:4px;padding-right:4px;padding-bottom:4px;padding-left:4px;">
-                        <h1 style="color:#000000;line-height:100%;font-size:22px;font-weight:normal;margin-bottom:5px;text-align:center;padding:15px 0 0 0;"><b>Upcoming Events</b></h1>
-                        <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed;">
-                          <tr>
-                            <td style="padding-top:30px; padding-right:30px; padding-bottom:30px; padding-left:30px;">
-                              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#000;" bgcolor="#ffffff">
-                                <tr>
-                                  <td align="center" valign="top" width="60" style="border:1px solid #CCC;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="60" >
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px;">Saturday</td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 16px;"><b>3</b></td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px; color:#FFF; background-color: #cf4520; width:60px;">June</td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                  <td><div style="text-align:left;font-size:16px;margin-bottom:0;line-height:135%;color: #cf4520;padding-left:8px;"><a href="http://giantsenterpirises.com" style="color: #cf4520;text-decoration:none;">San Jose Giants Race</a></div></td>
-                                </tr>
-                                <tr style="height:10px;"></tr>
-                                <tr>
-                                  <td align="center" valign="top" style="border:1px solid #CCC;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="60" >
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px;">Friday</td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 16px;"><b>30</b></td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px; color:#FFF; background-color: #cf4520; width:60px;">June</td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                  <td><div style="text-align:left;font-size:16px;margin-bottom:0;line-height:135%;color: #cf4520;padding-left:8px;"><a href="http://giantsenterpirises.com" style="color: #cf4520;text-decoration:none;">Opera at the ballpark</a></div></td>
-                                </tr>
-                                <tr style="height:10px;"></tr>
-                                <tr>
-                                  <td align="center" valign="top" style="border:1px solid #CCC;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="60" >
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px;">Saturday</td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 16px;"><b>29</b></td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px; color:#FFF; background-color: #cf4520; width:60px;">July</td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                  <td><div style="text-align:left;font-size:16px;margin-bottom:0;line-height:135%;color: #cf4520;padding-left:8px;"><a href="http://giantsenterpirises.com" style="color: #cf4520;text-decoration:none;">Opera at the ballpark</a></div></td>
-                                </tr>
+                  <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 30px;">
+                        <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="color: rgb(0, 0, 0);" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="center" style="border: 1px solid rgb(204, 204, 204); border-image: none;" valign="top" width="60">
+                              <table border="0" cellpadding="0" cellspacing="0" width="60">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 12px;" valign="top">Fri</td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="font-size: 16px;" valign="top"><strong>30</strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="width: 60px; color: rgb(255, 255, 255); font-size: 12px; background-color: rgb(207, 69, 32);" valign="top">June</td>
+                                  </tr>
+                                </tbody>
                               </table>
-                            </td>
-                            <td>
-                              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#000;" bgcolor="#ffffff">
-                                <tr>
-                                  <td align="center" valign="top" style="border:1px solid #CCC;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="60" >
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px;">Sundat</td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 16px;"><b>13</b></td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px; color:#FFF; background-color: #cf4520; width:60px;">Aug</td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                  <td><div style="text-align:left;font-size:16px;margin-bottom:0;line-height:135%;color: #cf4520;padding-left:8px;"><a href="http://giantsenterpirises.com" style="color: #cf4520;text-decoration:none;">Lady Gaga</a></div></td>
-                                </tr>
-                                <tr style="height:10px;"></tr>
-                                <tr>
-                                  <td align="center" valign="top" style="border:1px solid #CCC;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="60" >
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px;">Saturday</td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 16px;"><b>27</b></td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px; color:#FFF; background-color: #cf4520; width:60px;">Aug</td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                  <td><div style="text-align:left;font-size:16px;margin-bottom:0;line-height:135%;color: #cf4520;padding-left:8px;"><a href="http://giantsenterpirises.com" style="color: #cf4520;text-decoration:none;">San Francisco Giants Race</a></div></td>
-                                </tr> 
-                                <tr style="height:10px;"></tr>
-                                <tr>
-                                  <td align="center" valign="top" style="border:1px solid #CCC;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="60" >
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px;">&nbsp;</td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 16px;"><b>2018</b></td>
-                                      </tr>
-                                      <tr>
-                                        <td align="center" valign="top" style="font-size: 12px; color:#FFF; background-color: #cf4520; width:60px;">&nbsp;</td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                  <td><div style="text-align:left;font-size:16px;margin-bottom:0;line-height:135%;color: #cf4520;padding-left:8px;"><a href="http://giantsenterpirises.com" style="color: #cf4520;text-decoration:none;">Rugby World Cup Sevens</a></div></td>
-                                </tr>                                
+                              </td>
+                              <td style="padding-left: 10px;">
+                              <div style="text-align: left; color: rgb(207, 69, 32); line-height: 135%; font-size: 16px; margin-bottom: 0px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events" style="color: rgb(207, 69, 32); font-size: 16px; background-color: rgb(255, 255, 255);">Opera at the Ballpark</a></div>
+                              </td>
+                            </tr>
+                            <tr style="height: 10px;">
+                            </tr>
+                            <tr>
+                              <td align="center" style="border: 1px solid rgb(204, 204, 204); border-image: none;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="60">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 12px;" valign="top">Tue</td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="font-size: 16px;" valign="top"><strong>4</strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="width: 60px; color: rgb(255, 255, 255); font-size: 12px; background-color: rgb(207, 69, 32);" valign="top">July</td>
+                                  </tr>
+                                </tbody>
                               </table>
-                            </td>
-                          </tr>                                
+                              </td>
+                              <td style="padding-left: 10px;">
+                              <div style="text-align: left; color: rgb(207, 69, 32); line-height: 135%; font-size: 16px; margin-bottom: 0px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events" style="color: rgb(207, 69, 32); font-size: 16px; background-color: rgb(255, 255, 255);">Fireworks Cruise</a></div>
+                              </td>
+                            </tr>
+                            <tr style="height: 10px;">
+                            </tr>
+                            <tr>
+                              <td align="center" style="border: 1px solid rgb(204, 204, 204); border-image: none;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="60">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 12px;" valign="top">Wed</td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="font-size: 16px;" valign="top"><strong>5</strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="width: 60px; color: rgb(255, 255, 255); font-size: 12px; background-color: rgb(207, 69, 32);" valign="top">July</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </td>
+                              <td style="padding-left: 10px;">
+                              <div style="text-align: left; color: rgb(207, 69, 32); line-height: 135%; font-size: 16px; margin-bottom: 0px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events" style="color: rgb(207, 69, 32); font-size: 16px; background-color: rgb(255, 255, 255);">Movie Night&nbsp;<br />
+                              ft. <em>The Sandlot</em></a></div>
+                              </td>
+                            </tr>
+                          </tbody>
                         </table>
-                      </td>
-                    </tr>
-                </table>
-                  <!-- CENTERING TABLE // -->
-                  <!--
+                        </td>
+                        <td>
+                        <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="color: rgb(0, 0, 0);" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="center" style="border: 1px solid rgb(204, 204, 204); border-image: none;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="60">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 12px;" valign="top">Thur-Mon</td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="font-size: 16px;" valign="top"><strong>13-16</strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="width: 60px; color: rgb(255, 255, 255); font-size: 12px; background-color: rgb(207, 69, 32);" valign="top">July</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </td>
+                              <td style="padding-left: 10px;">
+                              <div style="text-align: left; color: rgb(207, 69, 32); line-height: 135%; font-size: 16px; margin-bottom: 0px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events" style="color: rgb(207, 69, 32); font-size: 16px; background-color: rgb(255, 255, 255);">San Diego&nbsp;<br />
+                              Road Trip</a></div>
+                              </td>
+                            </tr>
+                            <tr style="height: 10px;">
+                            </tr>
+                            <tr>
+                              <td align="center" style="border: 1px solid rgb(204, 204, 204); border-image: none;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="60">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 12px;" valign="top">Sat</td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="font-size: 16px;" valign="top"><strong>29</strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="width: 60px; color: rgb(255, 255, 255); font-size: 12px; background-color: rgb(207, 69, 32);" valign="top">July</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </td>
+                              <td style="padding-left: 10px;">
+                              <div style="text-align: left; color: rgb(207, 69, 32); line-height: 135%; font-size: 16px; margin-bottom: 0px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events" style="color: rgb(207, 69, 32); font-size: 16px; background-color: rgb(255, 255, 255);">James Taylor</a></div>
+                              </td>
+                            </tr>
+                            <tr style="height: 10px;">
+                            </tr>
+                            <tr>
+                              <td align="center" style="border: 1px solid rgb(204, 204, 204); border-image: none;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="60">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="font-size: 12px;" valign="top">Thur-Mon</td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="font-size: 16px;" valign="top"><strong>10-14</strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="center" style="width: 60px; color: rgb(255, 255, 255); font-size: 12px; background-color: rgb(207, 69, 32);" valign="top">Aug</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </td>
+                              <td style="padding-left: 10px;">
+                              <div style="text-align: left; color: rgb(207, 69, 32); line-height: 135%; font-size: 16px; margin-bottom: 0px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events" style="color: rgb(207, 69, 32); font-size: 16px; background-color: rgb(255, 255, 255);">Washington, D.C. Road Trip</a></div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- CENTERING TABLE // --><!--
                     The centering table keeps the content
                     tables centered in the emailBody table,
                     in case its width is set to 100%.
-                  -->
-                  
-                </td>
-              </tr>
-              <!-- // MODULE ROW -->
+                  --></td>
+          </tr>
+          <!-- // MODULE ROW --><!-- MODULE ROW // -->
+          <tr>
+            <td align="center" valign="top"><!-- CENTERING TABLE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" style="table-layout: fixed;" width="500">
+                    <tbody>
+                      <tr>
+                        <td class="flexibleContainerCell" valign="top" width="500"><!-- CONTENT TABLE // -->
+                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="left" class="flexibleContainerBox" style="padding: 30px;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" class="textContent" valign="top"><img alt="" height="210" src="/northstar/UserFiles/Image/JC - Recycling Center(1).jpg" width="210" /></td>
+                                    <td align="center" class="textContent" valign="top"><img alt="Text" class="flexibleImage" height="210" src="/northstar/UserFiles//Image/GiantsGems-210x210.jpg" style="float: left; max-width: 100%;" title="Text" width="210" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="left" class="textContent" style="padding-right: 22px;" valign="top">
+                                    <h3 style="text-align: left; color: rgb(95, 95, 95); line-height: 125%; font-size: 16px; font-weight: normal; margin-top: 10px; margin-bottom: 3px;">Green Giant</h3>
 
+                                    <div style="text-align: left; color: rgb(95, 95, 95); line-height: 135%; font-size: 12px; margin-bottom: 0px;">Our inaugural edition of Team Behind the Team w/ Jorge Costa covered all the bases &ndash; security secrets, off-field bragging rights, and a &#39;backstage&#39; tour! Don&rsquo;t miss the 2nd installment in August with Giants SVP&nbsp;&amp; CIO, Bill Schlough! &nbsp;&nbsp;&nbsp;</div>
+                                    </td>
+                                    <td align="left" class="textContent" valign="top">
+                                    <div style="padding-right: 22px;">
+                                    <h3 style="text-align: left; color: rgb(95, 95, 95); line-height: 125%; font-size: 16px; font-weight: normal; margin-top: 10px; margin-bottom: 3px;">Giants Gems</h3>
 
-              <!-- MODULE ROW // -->
-              <tr>
-                <td align="center" valign="top">
-                  <!-- CENTERING TABLE // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
-                      <td align="center" valign="top">
-                        <!-- FLEXIBLE CONTAINER // -->
-                         
-                        <table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer" style="table-layout: fixed;">
-                          <tr>
-                            <td valign="top" width="500" class="flexibleContainerCell">
-                              <!-- CONTENT TABLE // -->
-                              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                                  <td align="left" valign="top" class="flexibleContainerBox" style="padding-top:30px; padding-right:30px; padding-bottom:30px; padding-left:30px;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
-                                      <tr>
-                                        <td align="center" valign="top" class="textContent">
-                                          <img src="image-01.jpg" width="210" class="flexibleImage" style="max-width:100%;" alt="Text" title="Text" />
-                                        </td>
-                                        <td align="center" valign="top"  class="textContent">
-                                          <img src="image-02.jpg" width="210" class="flexibleImage" style="max-width:100%;" alt="Text" title="Text" />
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td align="left" class="textContent" width="50%" valign="top">
-                                          <div style="padding-right:20px;">
-                                            <h3 style="color:#5F5F5F;line-height:125%;font-size:16px;font-weight:normal;margin-top:10px;margin-bottom:3px;text-align:left;">Orange and Black - May 10th</h3>
-                                              <div style="text-align:left;font-size:12px;margin-bottom:0;color:#5F5F5F;line-height:135%;">The Orange & Black Ball at Feinstein’s is on Wednesday, May 1oth! Register today to dance the night away at the newly-renovate Hotel Nikko!</div>
-                                            </div>
-                                        </td>
-                                        <td align="left" class="textContent" valign="top">
-                                          <div style="padding-right:20px;">
-                                            <h3 style="color:#5F5F5F;line-height:125%;font-size:16px;font-weight:normal;margin-top:10px;margin-bottom:3px;text-align:left;">Did You Know?</h3>
-                                              <div style="text-align:left;font-size:12px;margin-bottom:0;color:#5F5F5F;line-height:135%;">The Fame Room is inspired by legendary Giants Manager John McGraw’s famous pool hall, which feature Duck Pin Bowling.</div>
-                                            </div>
-                                        </td>
-                                      </tr>
-                                        <td align="left" class="textContent">
-                                          <div style="text-align:center;"><a href="" style="display: inline-block; padding-top:10px; padding-right:10px; padding-bottom:10px; padding-left:10px; color: #FFFFFF; background-color:#cf4520;border-radius: 8px;margin-top:10px;text-decoration: none;">Register Now</a></div>
-                                        </td>
-                                        <td align="left" class="textContent">
-                                          <div style="text-align:center;"><a href="" style="display: inline-block; padding-top:10px; padding-right:10px; padding-bottom:10px; padding-left:10px;color: #FFFFFF; background-color:#cf4520;border-radius: 8px;margin-top:10px; text-decoration: none;">Read More</a></div>
-                                        </td>
-                                      </tr>
-                                    
-                                     
+                                    <div style="text-align: left; color: rgb(95, 95, 95); line-height: 135%; font-size: 12px; margin-bottom: 0px;">On June 17, 1970, Willie Mays <span style="font-size: 11px;">(615)</span> and Ernie Banks (504) both homer in the Cubs&#39; 6-1 victory over the Giants at Candlestick Park. It is the first time in baseball history two players with 500 career home runs have gone deep in the same game. &nbsp;</div>
+                                    </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="left" class="textContent">
+                                    <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 10px;" width="100%">
+                                      <tbody>
+                                        <tr>
+                                          <td>
+                                          <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center" bgcolor="#cf4520" style="padding: 12px 18px; border-radius: 6px; -webkit-border-radius: 6px;"><a href="https://pitchout.sfgiants.com/group/pages/member-events?eventId=46&amp;seatingId=49" style="color: rgb(255, 255, 255); font-size: 16px; font-weight: normal; text-decoration: none; display: inline-block;" target="_blank">More Info</a></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
                                     </table>
-                                  </td>
-                                </tr>
+                                    </td>
+                                    <td align="left" class="textContent">
+                                    <div style="text-align: center;">&nbsp;</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
                               </table>
-                              <!-- // CONTENT TABLE -->
-
-                            </td>
-                          </tr>
+                              </td>
+                            </tr>
+                          </tbody>
                         </table>
-                        <!-- // FLEXIBLE CONTAINER -->
-                      </td>
-                    </tr>
+                        <!-- // CONTENT TABLE --></td>
+                      </tr>
+                    </tbody>
                   </table>
-                  <!-- // CENTERING TABLE -->
-                </td>
-              </tr>
-              <!-- // MODULE ROW -->
-
-              <!-- MODULE ROW // -->
-              <tr>
-                <td align="center" valign="top">
-                  <!-- CENTERING TABLE // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
-                      <td align="center" valign="top">
-                        <!-- FLEXIBLE CONTAINER // -->
-                         
-                        <table border="0" cellpadding="0" cellspacing="0" width="500" style="table-layout: fixed;">
-                          <tr>
-                            <td valign="top" width="500">
-                              <!-- CONTENT TABLE // -->
-                              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                                  
-                                  <td align="center" style="padding-top:30px; padding-right:30px; padding-bottom:30px; padding-left:30px;">
-                                    <table border="0" cellpadding="0" cellspacing="0" >
-                                      <tr>
-                                        <td align="center" >
-                                          <h3 style="color:#5F5F5F;line-height:125%;font-size:20px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:center;">Text Space</h3>
-                                          <div style="text-align:left;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">Club Policy Reminders: The Gotham Clubhouse opens 2.5 hours before first pitch.</div>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </table>
-                              <!-- // CONTENT TABLE -->
-
-                            </td>
-                          </tr>
-                        </table>
-                        <!-- // FLEXIBLE CONTAINER -->
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- // CENTERING TABLE -->
-                </td>
-              </tr>
-              <!-- // MODULE ROW -->
-
-
-
-              <tr>
-                <td align="center" valign="top" width="66.6666666%">
-                  <img src="group.jpg" width="100%" />
-                </td>
-              </tr>             
-
-
-              <!-- MODULE ROW // -->
-              <tr>
-                <td align="center" valign="top" style="background-color: #000;">
-                  <!-- CENTERING TABLE // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
-                      <td align="center" valign="top">
-                        <!-- FLEXIBLE CONTAINER // -->
-                        <table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-                          <tr>
-                            <td align="center" valign="top" width="500" class="flexibleContainerCell">
-                              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-                                <tr>
-                                  <td align="center" valign="top" style="padding-top:30px; padding-right:30px; padding-bottom:30px; padding-left:30px;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100px">
-                                      <tr>
-                                        <td align="center" valign="top" style="text-align:center;">
-                                          <a href=""><img src="facebook-icon.png" style="width:32px; height:32px;"></a>
-                                        </td>
-                                        <td align="center" valign="top" style="text-align:center;">
-                                          <a href=""100px"><img src="instagram-icon.png" style="width:32px; height:32px;"></a>
-                                        </td>
-                                      </tr>
-                                    </table>
-
-                                    <!-- CONTENT TABLE // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                      <tr>
-                                        <td valign="top" class="textContent">
-                                          <div style="text-align:center;font-size:15px;margin-bottom:0;margin-top:3px;color:#5F5F5F;line-height:135%;"><p>The Gotham Club</p><p>24 Willies Mays Plaza | San Francisco, CA 94107</p><p>415-972-1883</p></div>
-                                          <div style="text-align:center;font-size:15px;margin-bottom:0;margin-top:3px;color:#5F5F5F;line-height:135%;">Copyright &#169; 2014 <a href="http://www.charlesmudy.com/respmail/" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">Giants Enterprises</span></a>. All&nbsp;rights&nbsp;reserved.</div>
-
-                                        </td>
-                                      </tr>
-                                    </table>
-                                    <!-- // CONTENT TABLE -->
-
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                        </table>
-                        <!-- // FLEXIBLE CONTAINER -->
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- // CENTERING TABLE -->
-                </td>
-              </tr>
-              <!-- // MODULE ROW -->
-
+                  <!-- // FLEXIBLE CONTAINER --></td>
+                </tr>
+              </tbody>
             </table>
-            <!-- // END -->
+            <!-- // CENTERING TABLE --></td>
+          </tr>
+          <!-- // MODULE ROW --><!-- MODULE ROW // -->
+          <tr>
+            <td align="center" valign="top"><!-- CENTERING TABLE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+                  <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed;" width="500">
+                    <tbody>
+                      <tr>
+                        <td valign="top" width="500"><!-- CONTENT TABLE // -->
+                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="center" style="padding: 30px;">
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td align="center">
+                                    <h3 style="text-align: center; color: rgb(95, 95, 95); line-height: 125%; font-size: 16px; font-weight: normal; margin-top: 0px; margin-bottom: 3px;"><u>Homestand Notes</u></h3>
 
-           
-          </td>
-        </tr>
+                                    <div style="text-align: center; color: rgb(95, 95, 95); line-height: 135%; font-size: 12px; margin-bottom: 0px;">Operating Hours Reminder:&nbsp; The Gotham Clubhouse entrance off Portwalk opens 2.5 hours prior to game time.&nbsp; The Gotham Game Room opens 2 hours prior to game time.<br />
+                                    <br />
+                                    Join us in the Gotham Clubhouse on <strong>Friday, June&nbsp;23</strong> for&nbsp;Native American&nbsp;Heritage Night specials and&nbsp;our next&nbsp;complimentary #FrostyFriday beer tasting courtesy of Moylan&#39;s Brewery!</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // CONTENT TABLE --></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- // FLEXIBLE CONTAINER --></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- // CENTERING TABLE --></td>
+          </tr>
+          <!-- // MODULE ROW -->
+          <tr>
+            <td style="width: 66%; text-align: center; vertical-align: top; background-color: rgb(102, 102, 102);"><em style="color: rgb(122, 122, 122); background-color: rgb(102, 102, 102);"><span style="color: rgb(255, 255, 255);"><span style="font-size: 14px;"><span style="font-family: 'century gothic', sans-serif;"><img alt="" height="167" src="/northstar/UserFiles//Image/1-McCrystle(1).png" width="500" /><img alt="" height="167" src="/northstar/UserFiles/Image/2-McCrystle.png" width="500" /><img alt="" height="298" src="/northstar/UserFiles/Image/Eileen-crop1.jpg" width="500" /></span></span></span></em><img alt="" height="167" src="/northstar/UserFiles/Image/3-McCrystle.png" width="500" /></td>
+          </tr>
+          <!-- MODULE ROW // -->
+          <tr>
+            <td align="center" style="background-color: rgb(0, 0, 0);" valign="top"><!-- CENTERING TABLE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                  <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="500">
+                    <tbody>
+                      <tr>
+                        <td align="center" class="flexibleContainerCell" valign="top" width="500">
+                        <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed;" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="center" style="padding: 30px;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" style="text-align: center;" valign="top"><a href="https://www.facebook.com/TheGothamClub/"><img alt="" height="32" src="/northstar/UserFiles//Image/facebookblack.png" width="32" /></a></td>
+                                    <td align="center" style="text-align: center;" valign="top"><a href="https://www.instagram.com/gothamclub1883/"><img alt="" height="32" src="/northstar/UserFiles/Image/instagramblack.png" width="32" /></a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- CONTENT TABLE // -->
+
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td class="textContent" valign="top">
+                                    <div style="text-align: center; color: rgb(255, 255, 255); line-height: 135%; font-size: 15px; margin-top: 3px; margin-bottom: 0px;">
+                                    <p>The Gotham Club<br />
+                                    24 Willie Mays Plaza | San Francisco, CA 94107<br />
+                                    415-972-1883</p>
+                                    </div>
+
+                                    <div style="text-align: center; color: rgb(255, 255, 255); line-height: 135%; font-size: 15px; margin-top: 3px; margin-bottom: 0px;">Copyright &copy; 2017 The Gotham Club.&nbsp;&nbsp;All&nbsp;rights&nbsp;reserved.</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- // CONTENT TABLE --></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- // FLEXIBLE CONTAINER --></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- // CENTERING TABLE --></td>
+          </tr>
+          <!-- // MODULE ROW -->
+        </tbody>
       </table>
-    </center>
-  </body>
-</html>
+      <!-- // END --></td>
+    </tr>
+  </tbody>
+</table>
+</center>
