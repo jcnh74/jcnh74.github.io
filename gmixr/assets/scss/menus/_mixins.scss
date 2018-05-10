@@ -1,0 +1,13 @@
+@import 'mixins/_sub-items-indentation.scss';
+@import 'mixins/_round-corners-last-item.scss';
+
+ @mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow($var) {
+    box-shadow:inset $var;
+}

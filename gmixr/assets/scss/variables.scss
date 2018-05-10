@@ -1,0 +1,45 @@
+
+$gold:#cea449;
+$spice:$gold;
+$red:red;
+$blue:#4482FF;
+$white:rgb(255,255,255);
+$lightgray:rgb(200,200,200);
+$midgray:#777779;
+$darkgray:rgb(102,102,102);
+$black:rgb(0,0,0);
+$banner: 48px;
+
+//market/mixed
+$blue: #4482FF;
+//affordable housing
+$teal: #00b2a9;
+//residential
+$purple: #7d55c7;
+//hospitality
+$orange: #ff9412;
+//commercial
+$pink: #da1884;
+//civic/cultural
+$bright-green: #66d43d;
+
+
+@mixin uppercase{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+@mixin spice{
+	color:$spice;
+}
+
+@mixin vertical-align() {
+	position:relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.spice{
+	@include spice;
+}
+

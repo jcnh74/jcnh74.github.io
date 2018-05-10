@@ -1,0 +1,123 @@
+@mixin avatar($size:32px, $margin: 7px, $borderwidth:1px) {
+	display: block;
+	border:$borderwidth solid rgba(255,255,255,0.0);
+	width:$size;
+	height:$size;
+	margin:$margin;
+	border-radius:50%;
+	overflow: hidden;
+	transition: border-color 0.3s;
+	img{
+		width:auto;
+		height:auto;
+	}
+	&:hover{
+		border:1px solid rgba(255,255,255,0.7);
+	}
+}
+@mixin flex() {
+	display:flex;
+	@media only screen and (max-width : 768px) {
+		flex-direction: column;
+	}
+}
+@mixin flexunit($size:1){
+	flex:$size;
+}
+
+
+
+#footer{
+	a{
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&.show{
+		
+	}
+
+	/* Widget Styles */
+	/* Header Top */
+
+	.site-footer-top{
+		@include flex();
+		.footer-top-left{
+			@include flexunit();
+		}
+		.footer-top-center{
+			@include flexunit();
+		}
+		.footer-top-right{
+			@include flexunit();
+		}
+	}
+	.site-footer-main{
+		@include flex();
+		ul{
+			list-style:none;
+			margin:0;
+			li{}
+		}
+		.footer-main-left{
+			@include flex();
+			@include flexunit();
+			ul{
+				list-style:none;
+				margin-right:1vw;
+				li{}
+			}
+		}
+		.footer-main-center{
+			@include flex();
+			@include flexunit();
+		}
+		.footer-main-right{
+			@include flex();
+			@include flexunit();
+		}
+	}
+	.site-footer-bottom{
+		@include flex();
+		.footer-bottom-left{
+			@include flexunit();
+		}
+		.footer-bottom-center{
+			@include flexunit();
+		}
+		.footer-bottom-right{
+			@include flexunit();
+		}
+	}
+
+
+	.widget-area{
+		@include flexunit();
+		.widget{
+			width:25%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.widget-label{
+			font-size: 13px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+	}
+
+}
+
+
+@media only screen and (max-width : 768px) {
+	#footer{
+		.widget-area{
+			display: block;
+			.widget{
+				width:100%;
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+	}		
+}
+

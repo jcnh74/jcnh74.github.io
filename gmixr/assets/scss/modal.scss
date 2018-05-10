@@ -1,0 +1,72 @@
+#basic-modal-content {
+  display:none;
+}
+
+#simplemodal-overlay {
+  background-color:#000;
+}
+
+#simplemodal-container {
+  height:480px; 
+  width:800px; 
+  color:#bbb; 
+  background-color:$black; 
+  padding:25px;
+  .simplemodal-data {
+    padding:8px;
+  }
+  a.modalCloseImg {
+    background:url(../img/close.png) no-repeat; 
+    background-size: 15px 15px;
+    width:15px; 
+    height:15px; 
+    display:inline; 
+    z-index:9999; 
+    position:absolute; 
+    top:10px; 
+    right:10px; 
+    cursor:pointer;
+  }
+}
+#modal{
+  display:none;
+}
+
+@media only screen and (max-width : 768px) {
+  #simplemodal-container {
+    height:240px; 
+    width:400px; 
+  }
+}
+@media only screen and (min-width : 768px) {
+  #simplemodal-container {
+    height:240px; 
+    width:400px; 
+  }
+}
+@media only screen and (min-width : 1024px) {
+  #simplemodal-container {
+    height:480px; 
+    width:800px; 
+  }
+}
+@media only screen and (min-width : 1400px) {
+  #simplemodal-container {
+    height:480px; 
+    width:800px; 
+  }
+}
+@media only screen and (min-width : 1600px) {
+  #simplemodal-container {
+    height:700px; 
+    width:1200px; 
+  }
+}
+@media only screen and (min-width : 2400px) {
+  #simplemodal-container {
+    height:900px; 
+    width:1600px; 
+  }
+}
+
+

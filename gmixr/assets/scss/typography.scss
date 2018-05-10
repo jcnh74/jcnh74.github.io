@@ -1,0 +1,142 @@
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+textarea {
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+body,.body-font{
+	font-family: "Times New Roman", Times, serif;
+}
+h1,h2,h3,h4,.style-font{
+	font-family: "Helvetica", Arial, san-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight:700;
+}
+#hero{
+	h1{font-size: 4vw;} 
+	h2{font-size: 3vw;} 
+	h3{font-size: 2vw;} 
+	h4{font-size: 1vw;}
+
+}
+@media only screen and (min-width : 1000px) {
+	#hero{
+		h1{font-size: 6vw;} 
+		h2{font-size: 4.5vw;} 
+		h3{font-size: 3vw;} 
+		h4{font-size: 1.5vw;}
+	}
+}
+@media only screen and (max-width : 782px) {
+	#hero{
+		h1{font-size: 8vw;} 
+		h2{font-size: 6vw;} 
+		h3{font-size: 4vw;} 
+		h4{font-size: 2vw;}
+	}
+}
+#content{
+	h1{font-size: 4vw;} 
+	h2{font-size: 3.5vw;} 
+	h3{font-size: 3vw;} 
+	h4{font-size: 2.5vw;} 
+	h5{font-size: 2vw;}
+	h6{font-size: 1.5vw;}
+	p,li{font-size: 1.5vw;}
+	table,dt,dd,address,.wp-caption-text{font-size: 1.2vw;}
+	.sidebar{font-size: 1.2vw;}
+
+}
+@media only screen and (max-width : 1000px) {
+	#content{
+		h1{font-size: 7vw;} 
+		h2{font-size: 6vw;} 
+		h3{font-size: 5vw;} 
+		h4{font-size: 4vw;} 
+		h5{font-size: 3vw;}
+		h6{font-size: 2vw;}
+		p,li{font-size: 2vw;}
+		table,dt,dd,address,.wp-caption-text{font-size: 2vw;}
+		.sidebar{font-size: 2vw;}
+	}
+}
+@media only screen and (max-width : 782px) {
+	#content{
+		h1{font-size: 12vw;} 
+		h2{font-size: 10vw;} 
+		h3{font-size: 8vw;} 
+		h4{font-size: 6vw;} 
+		h5{font-size: 5vw;}
+		h6{font-size: 4vw;}
+		p,li{font-size: 4vw;}
+		table,dt,dd,address,.wp-caption-text{font-size: 3vw;}
+		.sidebar{font-size: 3vw;}
+	}
+}
+
+
+p {
+	//font-size: 2vw;
+	margin-bottom: 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}

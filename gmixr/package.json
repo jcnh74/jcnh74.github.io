@@ -1,0 +1,34 @@
+{
+ "comment":"ssh -i ~/.ec2/accounts/jcnh74/ec2-keypair ubuntu@54.243.106.188",
+ "comment":"scp -i ~/.ec2/accounts/jcnh74/ec2-keypair /Users/johnhanusek/Development/Gmixr/Gmixr-Website/assets/css/style.min.css ubuntu@54.243.106.188:/var/www/gmixr_com/assets/css",
+ "comment":"scp -i ~/.ec2/accounts/jcnh74/ec2-keypair /Users/johnhanusek/Development/Gmixr/Gmixr-Website/index.html ubuntu@54.243.106.188:/var/www/gmixr_com",
+
+ "name": "gmixr-website",
+  "version": "0.2.3",
+  "description": "Scrolling One Page Website",
+  "homepage": "https://github.com/jcnh74/Gmixr-Website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcnh74/Gmixr-Website.git"
+  },
+  "author": "John Hanusek <john@hanusek.com>",
+  "license": "UNLICENSED",
+  "main": "gulpfile.js",
+  "private": true,
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "jshint":"*",
+    "gulp-jshint": "*",
+    "gulp-concat": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-minify-css": "*",
+    "gulp-browserify": "*",
+    "gulp-livereload": "*",
+    "gulp-inject": "*",
+    "tiny-lr": "*"
+  }
+}
+

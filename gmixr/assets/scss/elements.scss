@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 2em 2em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	thead{
+		background-color:rgba(0,0,0,0.2);
+		//color:rgba(255,255,255,0.5);
+	}
+	tbody{
+		background-color:rgba(0,0,0,0.1);
+		//color:$white;
+	}
+	tr{
+		td,th{
+			padding:0.8vw;
+		}
+	}
+}
+th {
+	font-weight: bold;
+}
+hr{
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom: 1px solid $darkgray;
+	margin:40px 0;
+}
+.clear{
+	clear:both;
+}

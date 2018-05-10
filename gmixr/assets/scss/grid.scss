@@ -1,0 +1,196 @@
+
+.grid,
+.grid2,
+.grid3,
+.grid5,
+.grid6, {
+	width:100%;
+	overflow:hidden;
+}
+.grid .block {
+	width:33.3333%;
+	float:left;
+	height:auto;
+}
+.grid2 .block{
+	width:50%;
+	float:left;
+	height:auto;
+}
+.grid3 .block{
+	width:33.333333%;
+	float:left;
+	padding-bottom:20px;
+}
+.grid4 .block {
+	width:25%;
+	float:left;
+}
+.grid5 .block{
+	width:20%;
+	float:left;
+	height:auto;
+}
+.grid6 .block{
+	width:16.6666666667%;
+	float:left;
+	height:auto;
+}
+
+.grid .block-2 {
+	width:33.3333%;
+	float:left;
+}
+.grid .block-6 {
+	width:66.666666%;
+	float:left;
+}
+.grid .block-full {
+	width:100%;
+	float:none;
+	text-align: center;
+}
+
+.block-wrap {
+	padding:40px;
+}
+.block-always-4{
+	width:25%;
+	float:left;
+}
+.block-always-2 {
+	width:50%;
+	float:left;
+}
+
+.flex{
+	display:flex;
+	&.column{
+		flex-direction: column;
+	}
+	&.row{
+		flex-direction: row;
+	}
+	@media only screen and (max-width : 768px) {
+		flex-direction: column;
+	}
+	.flex-1{
+		flex:1;
+	}
+}
+@mixin flex() {
+	display:flex;
+	@media only screen and (max-width : 768px) {
+		//flex-direction: column;
+	}
+}
+@mixin flexunit($size:1){
+	flex:$size;
+}
+
+
+
+
+@media only screen and (max-width : 768px) {
+	.grid-bind .block,
+	.grid .block {
+		width:100%;
+		padding:0px;
+	}
+
+	.grid3 .block{
+		width:100%;
+	}
+	.grid4 .block {
+		width:50%;
+	}
+	.grid5 .block {
+		width:50%;
+	}
+	.grid6 .block {
+		width:50%;
+	}
+	.grid .block-2 {
+		width:100%;
+	}
+	.grid .block-6 {
+		width:100%;
+	}
+}
+@media only screen and (min-width : 768px) {
+	.grid .block {
+		width:50%;
+	}
+
+	.grid3 .block{
+		width:33.333333%;
+	}
+	.grid6 .block {
+		width:25%;
+	}
+	.block .wrap{
+	}
+}
+@media only screen and (min-width : 1200px) {
+	.grid2 .block{
+		width:50%;
+	}
+}
+@media only screen and (min-width : 1024px) {
+	.grid .block {
+		width:33%;
+	}
+	.block .wrap{
+	}
+	.grid2 .block{
+		width:50%;
+	}
+	.grid3 .block{
+		width:33.333333%;
+	}
+	.grid6 .block {
+		width:16.6666666667%;
+	}
+}
+@media only screen and (min-width : 1400px) {
+	.grid .block {
+		width:25%;
+	}
+	.grid2 .block{
+		width:50%;
+	}
+	.grid3 .block{
+		width:33.333333%;
+	}
+	.grid6 .block {
+		width:16.6666666667%;
+	}
+}
+@media only screen and (min-width : 1600px) {
+	.grid .block {
+		width:20%;
+	}
+	.grid2 .block{
+		width:50%;
+	}
+	.grid3 .block{
+		width:33.333333%;
+	}
+	.grid6 .block {
+		width:16.6666666667%;
+	}
+}
+@media only screen and (min-width : 2400px) {
+	.grid .block {
+		width:20%;
+	}
+	.grid2 .block{
+		width:50%;
+	}
+	.grid3 .block{
+		width:33.333333%;
+	}
+	.grid6 .block {
+		width:12.5%;
+	}
+}
