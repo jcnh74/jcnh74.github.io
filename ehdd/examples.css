@@ -64,6 +64,22 @@ h1{
 p{
 	font-size: 2em;
 }
+.menu{
+	position: absolute;
+	top:20px;
+	left:20px;
+	z-index:9999;
+}
+.logo{
+	position: absolute;
+	top:20px;
+	right:20px;
+	z-index:9999;
+}
+.slide{
+	background-position: center;
+	background-size: cover;
+}
 .intro p{
 	width: 50%;
 	margin: 0 auto;
@@ -72,80 +88,14 @@ p{
 .section{
 	text-align:center;
 }
-#menu li {
-	display:inline-block;
-	margin: 10px;
-	color: #000;
-	background:#fff;
-	background: rgba(255,255,255, 0.5);
-	-webkit-border-radius: 10px;
-            border-radius: 10px;
-}
-#menu li.active{
-	background:#666;
-	background: rgba(0,0,0, 0.5);
-	color: #fff;
-}
-#menu li a{
-	text-decoration:none;
-	color: #000;
-}
-#menu li.active a:hover{
-	color: #000;
-}
-#menu li:hover{
-	background: rgba(255,255,255, 0.8);
-}
-#menu li a,
-#menu li.active a{
-	padding: 9px 18px;
-	display:block;
-}
-#menu li.active a{
-	color: #fff;
-}
-#menu{
-	position:fixed;
-	top:0;
-	left:0;
-	height: 40px;
-	z-index: 70;
-	width: 100%;
-	padding: 0;
-	margin:0;
-}
+
 .twitter-share-button{
 	position: fixed !important;
 	z-index: 99;
 	right: 149px;
 	top: 9px;
 }
-#infoMenu{
-	height: 20px;
-	color: #f2f2f2;
-	position:fixed;
-	z-index:70;
-	bottom:0;
-	width:100%;
-	text-align:right;
-	font-size:0.9em;
-	padding:8px 0 8px 0;
-}
-#infoMenu ul{
-	padding: 0 40px;
-}
-#infoMenu li a{
-	display: block;
-	margin: 0 22px 0 0;
-	color: #333;
-}
-#infoMenu li a:hover{
-	text-decoration:underline;
-}
-#infoMenu li{
-	display:inline-block;
-	position:relative;
-}
+
 #examplesList{
 	display:none;
 	background: #282828;
@@ -227,7 +177,32 @@ p{
     color: #316f68;
     background-color: #fff
 }
-
+.slide{
+	position: relative;
+}
+.copy{
+	position: absolute;
+	bottom:40px;
+	right:40px;
+	text-align: left;
+}
+.slide:nth-child(2) .copy{
+	position: absolute;
+	bottom:40px;
+	left:40px;
+	text-align: left;
+}
+.copy h1{
+	color:#FFF;
+	font-size: 32px;
+}
+.copy p{
+	color:#FFF;
+	font-size: 20px;
+}
+.fp-controlArrow{
+    display:none;
+}
 
 /* Extensions preview menu
  * --------------------------------------- */
