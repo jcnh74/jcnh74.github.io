@@ -8,6 +8,7 @@
 <meta property="og:image" content="ogimage.jpg" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <style>
@@ -100,17 +101,22 @@ a:nth-child(5):hover{
 }
 .gif{
 
-	width:100%;
+	/* width:100%;
 	background-position: center center;
 	background-size: cover;
-	background-attachment: fixed;
+	background-attachment: fixed; */
 }
 .work{
-	min-height: 100vh;
+	display: flex;
+	padding: 80px 0;
+	/* min-height: 100vh;
 	box-sizing: border-box;
 	padding: 80px 0;
-	overflow-y: scroll;
+	overflow-y: scroll; */
 	
+}
+.work .col{
+	flex:1
 }
 .work p{
 	
@@ -122,8 +128,6 @@ a:nth-child(5):hover{
 	-o-transition:  all 0.3s;
 	transition: all 0.3s;
 
-	opacity: 0;
-	margin-left:-10px;
 
 }
 .work p a{
@@ -133,6 +137,13 @@ a:nth-child(5):hover{
 	font-size: 22px;
 	background-color: rgba(0,0,0,0.5);
 	margin-top:20px;
+}
+.parallax{
+	height:100vh;
+	width:100%;
+	background-position: center center;
+	background-size: cover;
+	background-image: url(me.jpg)
 }
 
 
@@ -168,63 +179,78 @@ a:nth-child(5):hover{
 					</a>
 				</div>
 			</div>
-
+<div class="parallax"></div>
 		<div class="gif">
 			<h3><a href="http://gmixr.com" target="_blank" class="">gmixr.com</a></h3>
 			<div class="work">
-				<p class="head">Web</p>
-				<p><a href="http://alloypd.com/" target="_blank">alloypd.com</a></p>
-				<p><a href="http://bioniclandscape.com/" target="_blank">bioniclandscape.com</a></p>
-				<p><a href="http://bora.co/" target="_blank">bora.co</a></p>
-				<p><a href="http://www.climbsf.com/" target="_blank">climbsf.com</a></p>
-				<p><a href="https://darkcubed.com/" target="_blank">darkcubed.com</a></p>
-				<p><a href="https://fatboyhair.com/" target="_blank">fatboyhair.com</a></p>
-				<p><a href="http://formationgroup.com/" target="_blank">formationgroup.com</a></p>
-				<p><a href="http://fortalicesolutions.com/" target="_blank">fortalicesolutions.com</a></p>
-				<p><a href="https://fortmason.org/" target="_blank">fortmason.org</a></p>
-				<p><a href="https://gamechangers.davidson.edu/" target="_blank">davidson.edu</a></p>
-				<p><a href="http://giantsenterprises.com/" target="_blank">giantsenterprises.com</a></p>
-				<p><a href="http://hollywoodholler.com/" target="_blank">hollywoodholler.com</a></p>
-				<p><a href="https://www.lexiconbranding.com/" target="_blank">lexiconbranding.com</a></p>
-				<p><a href="https://www.publicarchitecture.org/" target="_blank">publicarchitecture.org</a></p>
-				<p><a href="http://songo.com/" target="_blank">songo.com</a></p>
+				<div class="col">
+					<p class="head">Web</p>
+					<p><a href="http://alloypd.com/" target="_blank">alloypd.com</a></p>
+					<p><a href="http://bioniclandscape.com/" target="_blank">bioniclandscape.com</a></p>
+					<p><a href="http://bora.co/" target="_blank">bora.co</a></p>
+					<p><a href="http://www.climbsf.com/" target="_blank">climbsf.com</a></p>
+					<p><a href="https://darkcubed.com/" target="_blank">darkcubed.com</a></p>
+					<p><a href="https://fatboyhair.com/" target="_blank">fatboyhair.com</a></p>
+					<p><a href="http://formationgroup.com/" target="_blank">formationgroup.com</a></p>
+					<p><a href="http://fortalicesolutions.com/" target="_blank">fortalicesolutions.com</a></p>
+					<p><a href="https://fortmason.org/" target="_blank">fortmason.org</a></p>
+					<p><a href="https://gamechangers.davidson.edu/" target="_blank">davidson.edu</a></p>
+					<p><a href="http://giantsenterprises.com/" target="_blank">giantsenterprises.com</a></p>
+					<p><a href="http://hollywoodholler.com/" target="_blank">hollywoodholler.com</a></p>
+					<p><a href="https://www.lexiconbranding.com/" target="_blank">lexiconbranding.com</a></p>
+					<p><a href="https://www.publicarchitecture.org/" target="_blank">publicarchitecture.org</a></p>
+					<p><a href="http://songo.com/" target="_blank">songo.com</a></p>
+					<p><a href="https://theoneplus.org/" target="_blank">theoneplus.org</a></p>
+				</div>
+				<div class="col">
 
-				<p><a href="https://theoneplus.org/" target="_blank">theoneplus.org</a></p>
-				<p class="head">Apps</p>
-				<p><a href="https://itunes.apple.com/us/app/gmixr/id1217135612?mt=8" target="_blank">Gmixr</a></p>
-				<p><a href="https://vimeo.com/120438858" target="_blank">Ekko</a></p>
-				<p><a href="http://stanford-kiosk.brick.agency" target="_blank">Stanford Clinical Trials</a></p>
-				<p><a href="https://darkcubed.com/" target="_blank">Dark<sup>3</sup></a></p>
-				<p><a href="https://itunes.apple.com/us/app/vobok/id580458570?mt=8" target="_blank">Vobok</a></p>
-				<p class="head">Plugins</p>
-				<p><a href="https://wordpress.org/plugins/wp-js-impress/" target="_blank">Wordpress Impress</a></p>
-				<p class="head">Motion</p>
-				<p><a href="https://www.youtube.com/watch?v=0Qax3vv2eQQ" target="_blank">CEDIA</a></p>
-				<p><a href="https://vimeo.com/27026767" target="_blank">Globe</a></p>
-				<p><a href="https://vimeo.com/27025365" target="_blank">Earth and Light</a></p>
-				<p><a href="https://vimeo.com/23407894" target="_blank">Frog</a></p>
-				<p><a href="https://vimeo.com/27027550" target="_blank">Break Apart</a></p>
-				<p><a href="https://vimeo.com/18464564" target="_blank">Hanusek</a></p>
-				<p><a href="https://vimeo.com/15660636" target="_blank">tRNA Unwrap</a></p>
-				<p><a href="https://vimeo.com/13533619" target="_blank">CMYK</a></p>
-				<p><a href="https://vimeo.com/12643756" target="_blank">Alternate Universe</a></p>
-				<p><a href="https://vimeo.com/12583011" target="_blank">Tron</a></p>
-				<p class="head">Short Films</p>
-				<p><a href="https://vimeo.com/30634534" target="_blank">The Spritsail</a></p>
-				<p><a href="https://vimeo.com/59203942" target="_blank">North Shore</a></p>	
-				<p><a href="https://www.youtube.com/watch?v=tHuwytUDQEE" target="_blank">Asbury Pool</a></p>
-				<p><a href="https://www.youtube.com/watch?v=GSPVpT0Pg5I" target="_blank">Bali Surf (1mil+ Views)</a></p>
-				<p><a href="https://www.youtube.com/watch?v=QSNY7XxQ470" target="_blank">FDR Skatepark</a></p>
-				<p><a href="https://www.youtube.com/watch?v=D6MFRtr9LSY" target="_blank">GLand Indo</a></p>
-				<p class="head">Music</p>
-				<p><a href="https://soundcloud.com/jcnh74/stranger-things" target="_blank">Stranger Things</a></p>
-				<p><a href="https://soundcloud.com/jcnh74/keyskeyskeys" target="_blank">KeysKeysKeys</a></p>	
-				<p><a href="https://soundcloud.com/jcnh74/couleursremix" target="_blank">Couleurs</a></p>
-				<p><a href="https://soundcloud.com/jcnh74/avephix" target="_blank">Avephix</a></p>
-	
-			</div>
+					<p class="head">Apps</p>
+					<p><a href="https://github.com/jcnh74/Gmixr" target="_blank">Gmixr</a></p>
+					<p><a href="https://vimeo.com/120438858" target="_blank">Ekko</a></p>
+					<p><a href="http://stanford-kiosk.brick.agency" target="_blank">Stanford Clinical Trials</a></p>
+					<p><a href="https://darkcubed.com/" target="_blank">Dark<sup>3</sup></a></p>
+					<p><a href="https://itunes.apple.com/us/app/vobok/id580458570?mt=8" target="_blank">Vobok</a></p>
+				</div>
+				<div class="col">
+
+					<p class="head">Plugins</p>
+					<p><a href="https://wordpress.org/plugins/wp-js-impress/" target="_blank">Wordpress Impress</a></p>
+				</div>
+				<div class="col">
+
+					<p class="head">Motion</p>
+					<p><a href="https://www.youtube.com/watch?v=0Qax3vv2eQQ" target="_blank">CEDIA</a></p>
+					<p><a href="https://vimeo.com/27026767" target="_blank">Globe</a></p>
+					<p><a href="https://vimeo.com/27025365" target="_blank">Earth and Light</a></p>
+					<p><a href="https://vimeo.com/23407894" target="_blank">Frog</a></p>
+					<p><a href="https://vimeo.com/27027550" target="_blank">Break Apart</a></p>
+					<p><a href="https://vimeo.com/18464564" target="_blank">Hanusek</a></p>
+					<p><a href="https://vimeo.com/15660636" target="_blank">tRNA Unwrap</a></p>
+					<p><a href="https://vimeo.com/13533619" target="_blank">CMYK</a></p>
+					<p><a href="https://vimeo.com/12643756" target="_blank">Alternate Universe</a></p>
+					<p><a href="https://vimeo.com/12583011" target="_blank">Tron</a></p>
+				</div>
+				<div class="col">
+
+					<p class="head">Short Films</p>
+					<p><a href="https://vimeo.com/30634534" target="_blank">The Spritsail</a></p>
+					<p><a href="https://vimeo.com/59203942" target="_blank">North Shore</a></p>	
+					<p><a href="https://www.youtube.com/watch?v=tHuwytUDQEE" target="_blank">Asbury Pool</a></p>
+					<p><a href="https://www.youtube.com/watch?v=GSPVpT0Pg5I" target="_blank">Bali Surf (1mil+ Views)</a></p>
+					<p><a href="https://www.youtube.com/watch?v=QSNY7XxQ470" target="_blank">FDR Skatepark</a></p>
+					<p><a href="https://www.youtube.com/watch?v=D6MFRtr9LSY" target="_blank">GLand Indo</a></p>
+				</div>
+				<div class="col">
+
+					<p class="head">Music</p>
+					<p><a href="https://soundcloud.com/jcnh74/stranger-things" target="_blank">Stranger Things</a></p>
+					<p><a href="https://soundcloud.com/jcnh74/keyskeyskeys" target="_blank">KeysKeysKeys</a></p>	
+					<p><a href="https://soundcloud.com/jcnh74/couleursremix" target="_blank">Couleurs</a></p>
+					<p><a href="https://soundcloud.com/jcnh74/avephix" target="_blank">Avephix</a></p>
+				</div>
+					
+				</div>
 		</div>
-
 
 <script>
 document.body.addEventListener('touchstart',function(){},false);
@@ -235,13 +261,16 @@ window.addEventListener("load",function() {
 		window.scrollTo(0, 1);
 	}, 0);
 });
+
+
+
+
 (function(){
 
 	function shuffle(o){
 	    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	    return o;
 	};
-
 
 	var gifArray = [];
 	searchArray = ['cinemagraph'];
@@ -250,29 +279,38 @@ window.addEventListener("load",function() {
 	$.ajax({
 			url: 'https://api.giphy.com/v1/gifs/search?q='+search+'&api_key=dc6zaTOxFJmzC'
 	}).done(function( data ) {
-		for(i in data.data){
-			gifArray.push(data.data[i]);  
-		}
-		var rand = shuffle(gifArray);
-	    $('.gif h4').html('<a href="https://www.tumblr.com/search/'+search+'" target="_blank">'+search+'</a>');
-		$('.gif').css("background-image", "url('"+rand[0].images.original.url+"')");
 
-		$('.work p').each(function(index){
-			$(this).delay(50*index).queue(function(next){
-				$(this).css({
-					marginLeft:'20px',
-					opacity:1,
-				});
-				next();
-			});
-		 });
+		// $('.work p').each(function(index){
+		// 	$(this).delay(50*index).queue(function(next){
+		// 		$(this).css({
+		// 			marginLeft:'20px',
+		// 			opacity:1,
+		// 		});
+		// 		next();
+		// 	});
+		//  });
 
 	});
 
-
-
-
 })(jQuery)
+
+
+var parallax= document.querySelector(".parallax");
+
+window.addEventListener("scroll", function() {
+
+   var scrolledHeight= window.pageYOffset,
+                limit= parallax.offsetTop+ parallax.offsetHeight;
+                
+  if(scrolledHeight > parallax.offsetTop && scrolledHeight <= limit) {
+    parallax.style.backgroundPositionY=  (scrolledHeight - parallax.offsetTop) /1.5+ "px";
+ 
+    } else {
+     parallax.style.backgroundPositionY=  "0";
+    }
+     });
+
+
 </script>
 <script type="text/javascript">
 
@@ -286,6 +324,16 @@ window.addEventListener("load",function() {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+</script>
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<div id="placeholder-div1"></div>
+<script>
+  gapi.hangout.render('placeholder-div1', {
+    'render': 'createhangout',
+    'initial_apps': [{'app_id' : '184219133185', 'start_data' : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }],
+	'invites': [{'id': 'hanusek@gmail.com', 'invite_type':'email'}]
+  });
 </script>
 </body>
 </hmtl>
