@@ -1,332 +1,444 @@
 <html>
+
 <head>
-<title>johnny hanusek | design &amp; code</title>
-<meta name="description" content="Drive fast, speed turns me on">
-<meta name="keywords" content="Programmer, Swift, iOS, HTML, CSS, Javascript, Python, Node">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta property="og:title" content="johnny hanusek | design &amp; code" />
-<meta property="og:image" content="ogimage.jpg" />
+	<title>johnny hanusek | design &amp; code</title>
+	<meta name="description" content="Drive fast, speed turns me on">
+	<meta name="keywords" content="Programmer, Swift, iOS, HTML, CSS, Javascript, Python, Node">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:title" content="johnny hanusek | design &amp; code" />
+	<meta property="og:image" content="ogimage.jpg" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-<style>
-body{
-	background-color:#111;
-	margin:3px;
-	color:rgb(248,248,248);
-	font-family: Avenir, Helvetica, san-serif;
-}
-.header{
-	background:rgba(0,0,0,0.6);
-	padding:8px 12px;
-	position: fixed;
-	top:0;
-	left:0;
-	right:0;
-}
-h1{
-	font-weight: 100;
-	white-space: nowrap;
-	margin:0;
-}
-h3{
-	position: absolute;
-	bottom:0;
-	left:0;
-	background:rgba(0,0,0,0.75);
-	font-weight: 100;
-	padding:8px 12px;
-	margin:0;
-	font-size: 14px;
-	opacity: 0;
-	-webkit-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -moz-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -o-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-	border-radius: 0px 4px 0px 0px;
-}
-h4{
-	position: absolute;
-	bottom:0;
-	right:0;
-	background:rgba(0,0,0,0.75);
-	font-weight: 100;
-	padding:4px 8px;
-	margin:0;
-	font-size: 11px;
-	opacity: 0;
-	color:#777;
-	-webkit-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -moz-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -o-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-	border-radius: 4px 0px 0px 0px;
+	<style>
+		body {
+			background-color: #111;
+			margin: 3px;
+			color: rgb(248, 248, 248);
+			font-family: Avenir, Helvetica, san-serif;
+		}
 
-}
-a{
-	color:white;
-	text-decoration: none;
-}
-a:nth-child(1):hover{
-	color:#01b5b6;
-}
-a:nth-child(2):hover{
-	color:#8bc900;
-}
-a:nth-child(3):hover{
-	color:#d8d051;
-}
-a:nth-child(4):hover{
-	color:#ed8700;
-}
-a:nth-child(5):hover{
-	color:#01b5b6;
-}
-.social{
-	white-space: nowrap;
-	position:absolute;
-	top:20px;
-	right:20px;
-	z-index: 9;
-	-webkit-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -moz-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -o-transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    transition:all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-}
-.social i{
-	font-size:22px;
-	margin:0 4px;
-}
-.gif{
+		.header {
+			background: rgba(0, 0, 0, 0.6);
+			padding: 8px 12px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
 
-	/* width:100%;
+		h1 {
+			font-weight: 100;
+			white-space: nowrap;
+			margin: 0;
+		}
+
+		h3 {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.75);
+			font-weight: 100;
+			padding: 8px 12px;
+			margin: 0;
+			font-size: 14px;
+			opacity: 0;
+			-webkit-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			-moz-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			-o-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			border-radius: 0px 4px 0px 0px;
+		}
+
+		h4 {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.75);
+			font-weight: 100;
+			padding: 4px 8px;
+			margin: 0;
+			font-size: 11px;
+			opacity: 0;
+			color: #777;
+			-webkit-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			-moz-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			-o-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			border-radius: 4px 0px 0px 0px;
+
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+		}
+
+		a:nth-child(1):hover {
+			color: #01b5b6;
+		}
+
+		a:nth-child(2):hover {
+			color: #8bc900;
+		}
+
+		a:nth-child(3):hover {
+			color: #d8d051;
+		}
+
+		a:nth-child(4):hover {
+			color: #ed8700;
+		}
+
+		a:nth-child(5):hover {
+			color: #01b5b6;
+		}
+
+		.social {
+			white-space: nowrap;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 9;
+			-webkit-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			-moz-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			-o-transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			transition: all 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+		}
+
+		.social i {
+			font-size: 22px;
+			margin: 0 4px;
+		}
+
+		.gif {
+
+			/* width:100%;
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed; */
-}
-.work{
-	display: flex;
-	padding: 80px 0;
-	/* min-height: 100vh;
+		}
+
+		.work {
+			display: flex;
+			padding: 80px 0;
+			/* min-height: 100vh;
 	box-sizing: border-box;
 	padding: 80px 0;
 	overflow-y: scroll; */
-	
-}
-.work .col{
-	flex:1
-}
-.work p{
-	
-	margin:0 20px;
-	padding: 4px;
+		}
 
-	-webkit-transition: all 0.3s;
-	-moz-transition:  all 0.3s;
-	-o-transition:  all 0.3s;
-	transition: all 0.3s;
+		.work .col {
+			flex: 1
+		}
 
+		.work p {
 
-}
-.work p a{
-	background-color: rgba(0,0,0,0.8);
-}
-.work p.head{
-	font-size: 22px;
-	background-color: rgba(0,0,0,0.5);
-	margin-top:20px;
-}
-.parallax{
-	height:100vh;
-	width:100%;
-	background-position: center center;
-	background-size: cover;
-	background-image: url(build/img/me.jpg);
-}
+			margin: 0 20px;
+			padding: 4px;
+
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
 
 
-</style>
+		}
+
+		.work p a {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.work p.head {
+			font-size: 22px;
+			background-color: rgba(0, 0, 0, 0.5);
+			margin-top: 20px;
+		}
+
+		.parallax {
+			height: 100vh;
+			width: 100%;
+			background-position: center center;
+			background-size: cover;
+			background-image: url(build/img/me.jpg);
+		}
+	</style>
 </head>
+
 <body ontouchstart="">
-<div class="header">
-				<h1 style="display:inline-block;margin-right:40px;">johnny hanusek | design &amp; code</h1>
-				<div style="display:inline-block;">
-						<a class="buy-with-crypto" style="margin:0;"
+	<div class="header">
+		<h1 style="display:inline-block;margin-right:40px;">johnny hanusek | design &amp; code</h1>
+		<div style="display:inline-block;">
+			<!-- <a class="buy-with-crypto" style="margin:0;"
 						   href="https://commerce.coinbase.com/checkout/c4a4cab4-b1ed-40e9-8fde-dfcf5df8325a">
 						  <span>Hire Me!</span>
-						</a>
-						<script src="https://commerce.coinbase.com/v1/checkout.js">
-						</script>
-					  </div>
-				<div class="social">
-						
-					<a href="http://twitter.com/hanusek" target="_blank">
-						<i class="fa fa-twitter"></i>
-					</a>
-					<a href="https://instagram.com/johnnyhanusek/" target="_blank">
-						<i class="fa fa-instagram"></i>
-					</a>
-					<a href="https://github.com/jcnh74" target="_blank">
-						<i class="fa fa-github"></i>
-					</a>
-					<a href="https://www.linkedin.com/in/johnhanusek/en" target="_blank">
-						<i class="fa fa-linkedin"></i>
-					</a>
-					<a href="https://soundcloud.com/jcnh74/tracks" target="_blank">
-						<i class="fa fa-soundcloud"></i>
-					</a>
-				</div>
-			</div>
-<div class="parallax"></div>
-		<div class="gif">
-			<h3><a href="http://gmixr.com" target="_blank" class="">gmixr.com</a></h3>
-			<div class="work">
-				<div class="col">
-					<p class="head">Web</p>
-					<p><a href="http://alloypd.com/" target="_blank">alloypd.com</a></p>
-					<p><a href="http://bioniclandscape.com/" target="_blank">bioniclandscape.com</a></p>
-					<p><a href="http://bora.co/" target="_blank">bora.co</a></p>
-					<p><a href="http://www.climbsf.com/" target="_blank">climbsf.com</a></p>
-					<p><a href="https://darkcubed.com/" target="_blank">darkcubed.com</a></p>
-					<p><a href="https://fatboyhair.com/" target="_blank">fatboyhair.com</a></p>
-					<p><a href="http://formationgroup.com/" target="_blank">formationgroup.com</a></p>
-					<p><a href="http://fortalicesolutions.com/" target="_blank">fortalicesolutions.com</a></p>
-					<p><a href="https://fortmason.org/" target="_blank">fortmason.org</a></p>
-					<p><a href="https://gamechangers.davidson.edu/" target="_blank">davidson.edu</a></p>
-					<p><a href="http://giantsenterprises.com/" target="_blank">giantsenterprises.com</a></p>
-					<p><a href="http://hollywoodholler.com/" target="_blank">hollywoodholler.com</a></p>
-					<p><a href="https://www.lexiconbranding.com/" target="_blank">lexiconbranding.com</a></p>
-					<p><a href="https://www.publicarchitecture.org/" target="_blank">publicarchitecture.org</a></p>
-					<p><a href="http://songo.com/" target="_blank">songo.com</a></p>
-					<p><a href="https://theoneplus.org/" target="_blank">theoneplus.org</a></p>
-				</div>
-				<div class="col">
+						</a> -->
+			<a class="buy-with-crypto" style="margin:0;" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc1gGY_FKIilySzpVBfan-5DnsFNlrBWTWyY9EveklQsz5Csg/viewform">
+				<span>Work Request</span>
+			</a>
 
-					<p class="head">Apps</p>
-					<p><a href="https://github.com/jcnh74/Gmixr" target="_blank">Gmixr</a></p>
-					<p><a href="https://vimeo.com/120438858" target="_blank">Ekko</a></p>
-					<p><a href="http://stanford-kiosk.brick.agency" target="_blank">Stanford Clinical Trials</a></p>
-					<p><a href="http://squeeze.watch/" target="_blank">Squeeze Watch</a></p>
-					<p><a href="https://darkcubed.com/" target="_blank">Dark<sup>3</sup></a></p>
-					<p><a href="https://itunes.apple.com/us/app/vobok/id580458570?mt=8" target="_blank">Vobok</a></p>
-				</div>
-				<div class="col">
-
-					<p class="head">Plugins</p>
-					<p><a href="https://wordpress.org/plugins/wp-js-impress/" target="_blank">Wordpress Impress</a></p>
-				</div>
-				<div class="col">
-
-					<p class="head">Motion</p>
-					<p><a href="https://www.youtube.com/watch?v=0Qax3vv2eQQ" target="_blank">CEDIA</a></p>
-					<p><a href="https://vimeo.com/27026767" target="_blank">Globe</a></p>
-					<p><a href="https://vimeo.com/27025365" target="_blank">Earth and Light</a></p>
-					<p><a href="https://vimeo.com/23407894" target="_blank">Frog</a></p>
-					<p><a href="https://vimeo.com/27027550" target="_blank">Break Apart</a></p>
-					<p><a href="https://vimeo.com/18464564" target="_blank">Hanusek</a></p>
-					<p><a href="https://vimeo.com/15660636" target="_blank">tRNA Unwrap</a></p>
-					<p><a href="https://vimeo.com/13533619" target="_blank">CMYK</a></p>
-					<p><a href="https://vimeo.com/12643756" target="_blank">Alternate Universe</a></p>
-					<p><a href="https://vimeo.com/12583011" target="_blank">Tron</a></p>
-				</div>
-				<div class="col">
-
-					<p class="head">Short Films</p>
-					<p><a href="https://vimeo.com/30634534" target="_blank">The Spritsail</a></p>
-					<p><a href="https://vimeo.com/59203942" target="_blank">North Shore</a></p>	
-					<p><a href="https://www.youtube.com/watch?v=tHuwytUDQEE" target="_blank">Asbury Pool</a></p>
-					<p><a href="https://www.youtube.com/watch?v=GSPVpT0Pg5I" target="_blank">Bali Surf (1mil+ Views)</a></p>
-					<p><a href="https://www.youtube.com/watch?v=QSNY7XxQ470" target="_blank">FDR Skatepark</a></p>
-					<p><a href="https://www.youtube.com/watch?v=D6MFRtr9LSY" target="_blank">GLand Indo</a></p>
-				</div>
-				<div class="col">
-
-					<p class="head">Music</p>
-					<p><a href="https://soundcloud.com/jcnh74/stranger-things" target="_blank">Stranger Things</a></p>
-					<p><a href="https://soundcloud.com/jcnh74/keyskeyskeys" target="_blank">KeysKeysKeys</a></p>	
-					<p><a href="https://soundcloud.com/jcnh74/couleursremix" target="_blank">Couleurs</a></p>
-					<p><a href="https://soundcloud.com/jcnh74/avephix" target="_blank">Avephix</a></p>
-				</div>
-					
-				</div>
+			<!-- <script src="https://commerce.coinbase.com/v1/checkout.js">
+						</script> -->
 		</div>
+		<div class="social">
 
-<script>
-document.body.addEventListener('touchstart',function(){},false);
-window.addEventListener("load",function() {
-	// Set a timeout...
-	setTimeout(function(){
-		// Hide the address bar!
-		window.scrollTo(0, 1);
-	}, 0);
-});
+			<a href="http://twitter.com/hanusek" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+			<a href="https://instagram.com/johnnyhanusek/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+			<a href="https://github.com/jcnh74" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/johnhanusek/en" target="_blank">
+				<i class="fa fa-linkedin"></i>
+			</a>
+			<a href="https://soundcloud.com/jcnh74/tracks" target="_blank">
+				<i class="fa fa-soundcloud"></i>
+			</a>
+		</div>
+	</div>
+	<div class="parallax"></div>
+	<div class="gif">
+		<h3>
+			<a href="http://gmixr.com" target="_blank" class="">gmixr.com</a>
+		</h3>
+		<div class="work">
+			<div class="col">
+				<p class="head">Web</p>
+				<p>
+					<a href="http://alloypd.com/" target="_blank">alloypd.com</a>
+				</p>
+				<p>
+					<a href="http://bioniclandscape.com/" target="_blank">bioniclandscape.com</a>
+				</p>
+				<p>
+					<a href="http://bora.co/" target="_blank">bora.co</a>
+				</p>
+				<p>
+					<a href="http://www.climbsf.com/" target="_blank">climbsf.com</a>
+				</p>
+				<p>
+					<a href="https://darkcubed.com/" target="_blank">darkcubed.com</a>
+				</p>
+				<p>
+					<a href="https://fatboyhair.com/" target="_blank">fatboyhair.com</a>
+				</p>
+				<p>
+					<a href="http://formationgroup.com/" target="_blank">formationgroup.com</a>
+				</p>
+				<p>
+					<a href="http://fortalicesolutions.com/" target="_blank">fortalicesolutions.com</a>
+				</p>
+				<p>
+					<a href="https://fortmason.org/" target="_blank">fortmason.org</a>
+				</p>
+				<p>
+					<a href="https://gamechangers.davidson.edu/" target="_blank">davidson.edu</a>
+				</p>
+				<p>
+					<a href="http://giantsenterprises.com/" target="_blank">giantsenterprises.com</a>
+				</p>
+				<p>
+					<a href="http://hollywoodholler.com/" target="_blank">hollywoodholler.com</a>
+				</p>
+				<p>
+					<a href="https://www.lexiconbranding.com/" target="_blank">lexiconbranding.com</a>
+				</p>
+				<p>
+					<a href="https://www.publicarchitecture.org/" target="_blank">publicarchitecture.org</a>
+				</p>
+				<p>
+					<a href="http://songo.com/" target="_blank">songo.com</a>
+				</p>
+				<p>
+					<a href="https://theoneplus.org/" target="_blank">theoneplus.org</a>
+				</p>
+			</div>
+			<div class="col">
+
+				<p class="head">Apps</p>
+				<p>
+					<a href="https://github.com/jcnh74/Gmixr" target="_blank">Gmixr</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/120438858" target="_blank">Ekko</a>
+				</p>
+				<p>
+					<a href="http://stanford-kiosk.brick.agency" target="_blank">Stanford Clinical Trials</a>
+				</p>
+				<p>
+					<a href="http://squeeze.watch/" target="_blank">Squeeze Watch</a>
+				</p>
+				<p>
+					<a href="https://darkcubed.com/" target="_blank">Dark
+						<sup>3</sup>
+					</a>
+				</p>
+				<p>
+					<a href="https://itunes.apple.com/us/app/vobok/id580458570?mt=8" target="_blank">Vobok</a>
+				</p>
+			</div>
+			<div class="col">
+
+				<p class="head">Plugins</p>
+				<p>
+					<a href="https://wordpress.org/plugins/wp-js-impress/" target="_blank">Wordpress Impress</a>
+				</p>
+			</div>
+			<div class="col">
+
+				<p class="head">Motion</p>
+				<p>
+					<a href="https://www.youtube.com/watch?v=0Qax3vv2eQQ" target="_blank">CEDIA</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/27026767" target="_blank">Globe</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/27025365" target="_blank">Earth and Light</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/23407894" target="_blank">Frog</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/27027550" target="_blank">Break Apart</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/18464564" target="_blank">Hanusek</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/15660636" target="_blank">tRNA Unwrap</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/13533619" target="_blank">CMYK</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/12643756" target="_blank">Alternate Universe</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/12583011" target="_blank">Tron</a>
+				</p>
+			</div>
+			<div class="col">
+
+				<p class="head">Short Films</p>
+				<p>
+					<a href="https://vimeo.com/30634534" target="_blank">The Spritsail</a>
+				</p>
+				<p>
+					<a href="https://vimeo.com/59203942" target="_blank">North Shore</a>
+				</p>
+				<p>
+					<a href="https://www.youtube.com/watch?v=tHuwytUDQEE" target="_blank">Asbury Pool</a>
+				</p>
+				<p>
+					<a href="https://www.youtube.com/watch?v=GSPVpT0Pg5I" target="_blank">Bali Surf (1mil+ Views)</a>
+				</p>
+				<p>
+					<a href="https://www.youtube.com/watch?v=QSNY7XxQ470" target="_blank">FDR Skatepark</a>
+				</p>
+				<p>
+					<a href="https://www.youtube.com/watch?v=D6MFRtr9LSY" target="_blank">GLand Indo</a>
+				</p>
+			</div>
+			<div class="col">
+
+				<p class="head">Music</p>
+				<p>
+					<a href="https://soundcloud.com/jcnh74/stranger-things" target="_blank">Stranger Things</a>
+				</p>
+				<p>
+					<a href="https://soundcloud.com/jcnh74/keyskeyskeys" target="_blank">KeysKeysKeys</a>
+				</p>
+				<p>
+					<a href="https://soundcloud.com/jcnh74/couleursremix" target="_blank">Couleurs</a>
+				</p>
+				<p>
+					<a href="https://soundcloud.com/jcnh74/avephix" target="_blank">Avephix</a>
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+		document.body.addEventListener('touchstart', function () { }, false);
+		window.addEventListener("load", function () {
+			// Set a timeout...
+			setTimeout(function () {
+				// Hide the address bar!
+				window.scrollTo(0, 1);
+			}, 0);
+		});
 
 
 
 
-(function(){
+		(function () {
 
-	function shuffle(o){
-	    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-	    return o;
-	};
+			function shuffle(o) {
+				for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+				return o;
+			};
 
-	var gifArray = [];
-	searchArray = ['cinemagraph'];
-	var search = searchArray[Math.floor(Math.random() * searchArray.length)];
-	console.log(search);
-	$.ajax({
-			url: 'https://api.giphy.com/v1/gifs/search?q='+search+'&api_key=dc6zaTOxFJmzC'
-	}).done(function( data ) {
+			var gifArray = [];
+			searchArray = ['cinemagraph'];
+			var search = searchArray[Math.floor(Math.random() * searchArray.length)];
+			console.log(search);
+			$.ajax({
+				url: 'https://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=dc6zaTOxFJmzC'
+			}).done(function (data) {
 
-		// $('.work p').each(function(index){
-		// 	$(this).delay(50*index).queue(function(next){
-		// 		$(this).css({
-		// 			marginLeft:'20px',
-		// 			opacity:1,
-		// 		});
-		// 		next();
-		// 	});
-		//  });
+				// $('.work p').each(function(index){
+				// 	$(this).delay(50*index).queue(function(next){
+				// 		$(this).css({
+				// 			marginLeft:'20px',
+				// 			opacity:1,
+				// 		});
+				// 		next();
+				// 	});
+				//  });
 
-	});
+			});
 
-})(jQuery)
-
-
-var parallax= document.querySelector(".parallax");
-
-window.addEventListener("scroll", function() {
-
-   var scrolledHeight= window.pageYOffset,
-                limit= parallax.offsetTop+ parallax.offsetHeight;
-                
-  if(scrolledHeight > parallax.offsetTop && scrolledHeight <= limit) {
-    parallax.style.backgroundPositionY=  (scrolledHeight - parallax.offsetTop) /1.5+ "px";
- 
-    } else {
-     parallax.style.backgroundPositionY=  "0";
-    }
-     });
+		})(jQuery)
 
 
-</script>
-<script type="text/javascript">
+		var parallax = document.querySelector(".parallax");
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-321558-27']);
-  _gaq.push(['_trackPageview']);
+		window.addEventListener("scroll", function () {
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+			var scrolledHeight = window.pageYOffset,
+				limit = parallax.offsetTop + parallax.offsetHeight;
 
-</script>
-<!-- <script src="https://apis.google.com/js/platform.js"></script>
+			if (scrolledHeight > parallax.offsetTop && scrolledHeight <= limit) {
+				parallax.style.backgroundPositionY = (scrolledHeight - parallax.offsetTop) / 1.5 + "px";
+
+			} else {
+				parallax.style.backgroundPositionY = "0";
+			}
+		});
+
+
+	</script>
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-321558-27']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+	<!-- <script src="https://apis.google.com/js/platform.js"></script>
 
 <div id="placeholder-div1"></div>
 <script>
